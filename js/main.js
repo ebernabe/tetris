@@ -12,14 +12,14 @@ function writesquares(x1,y1,x2,y2,x3,y3,x4,y4){
 	$(".tetris tr:nth-of-type("+x2+") td:nth-of-type("+y2+")").addClass("mark");
 	$(".tetris tr:nth-of-type("+x3+") td:nth-of-type("+y3+")").addClass("mark");
 	$(".tetris tr:nth-of-type("+x4+") td:nth-of-type("+y4+")").addClass("mark");
-	a1=x1;
-	b1=y1;
-	a2 =x2;
-	b2 =y2;
-	a3 =x3;
-	b3 =y3;
-	a4 =x4;
-	b4 =y4;
+	a1 = x1;
+	b1 = y1;
+	a2 = x2;
+	b2 = y2;
+	a3 = x3;
+	b3 = y3;
+	a4 = x4;
+	b4 = y4;
 }
 
 
@@ -60,6 +60,7 @@ function move(){
 	$(".tetris tr:nth-of-type("+a2+") td:nth-of-type("+b2+")").removeClass("mark");
 	$(".tetris tr:nth-of-type("+a3+") td:nth-of-type("+b3+")").removeClass("mark");
 	$(".tetris tr:nth-of-type("+a4+") td:nth-of-type("+b4+")").removeClass("mark");
+
 a1=a1+1;
 b1=b1;
 a2=a2+1;
@@ -68,6 +69,7 @@ a3=a3+1;
 b3=b3;
 a4=a4+1;
 b4=b4;
+
 	$(".tetris tr:nth-of-type("+a1+") td:nth-of-type("+b1+")").addClass("mark");
 	$(".tetris tr:nth-of-type("+a2+") td:nth-of-type("+b2+")").addClass("mark");
 	$(".tetris tr:nth-of-type("+a3+") td:nth-of-type("+b3+")").addClass("mark");
@@ -78,8 +80,12 @@ setTimeout(move, 1000);
 
 
 $(document).keydown(function(tecla){
-              if (tecla.keyCode == 39) {
+    $(".tetris tr:nth-of-type("+a1+") td:nth-of-type("+b1+")").removeClass("mark");
+	$(".tetris tr:nth-of-type("+a2+") td:nth-of-type("+b2+")").removeClass("mark");
+	$(".tetris tr:nth-of-type("+a3+") td:nth-of-type("+b3+")").removeClass("mark");
+	$(".tetris tr:nth-of-type("+a4+") td:nth-of-type("+b4+")").removeClass("mark");
 
+    if (tecla.keyCode == 39) {
                 if  (((b1+1)<=12) && ((b2+1)<=12) && ((b3+1)<=12) && ((b4+1)<=12)){
                      b1=b1+1;
                      b2=b2+1;
@@ -87,11 +93,19 @@ $(document).keydown(function(tecla){
                      b4=b4+1;
                  }
 
-            }else if(tecla.keyCode == 83) {
-                $('.s').css({ 'background-color' : 'blue' });
-            }else if(tecla.keyCode == 68){
-                $('.d').css({ 'background-color' : 'green' });
-            } 
+    }else if(tecla.keyCode == 37) {
+            	if  (((b1-1)>0) && ((b2-1)>0) && ((b3-1)>0) && ((b4-1)>0)){
+                     b1=b1-1;
+                     b2=b2-1;
+                     b3=b3-1;
+                     b4=b4-1;
+                 }  
+    } 
+
+   $(".tetris tr:nth-of-type("+a1+") td:nth-of-type("+b1+")").addClass("mark");
+   $(".tetris tr:nth-of-type("+a2+") td:nth-of-type("+b2+")").addClass("mark");
+   $(".tetris tr:nth-of-type("+a3+") td:nth-of-type("+b3+")").addClass("mark");
+   $(".tetris tr:nth-of-type("+a4+") td:nth-of-type("+b4+")").addClass("mark");
  });
 
 
