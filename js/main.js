@@ -72,9 +72,27 @@ b4=b4;
 	$(".tetris tr:nth-of-type("+a2+") td:nth-of-type("+b2+")").addClass("mark");
 	$(".tetris tr:nth-of-type("+a3+") td:nth-of-type("+b3+")").addClass("mark");
 	$(".tetris tr:nth-of-type("+a4+") td:nth-of-type("+b4+")").addClass("mark");
-setTimeout(move, 300);
+setTimeout(move, 1000);
 	
 }
+
+
+$(document).keydown(function(tecla){
+              if (tecla.keyCode == 39) {
+
+                if  (((b1+1)<=12) && ((b2+1)<=12) && ((b3+1)<=12) && ((b4+1)<=12)){
+                     b1=b1+1;
+                     b2=b2+1;
+                     b3=b3+1;
+                     b4=b4+1;
+                 }
+
+            }else if(tecla.keyCode == 83) {
+                $('.s').css({ 'background-color' : 'blue' });
+            }else if(tecla.keyCode == 68){
+                $('.d').css({ 'background-color' : 'green' });
+            } 
+ });
 
 
 
