@@ -96,21 +96,38 @@ textarea {
 
 .tetris{
     display: block;
-    
+    border: 0px; 
+    margin: 0px;
+    padding: 0px; 
      clear: right;
-     margin: auto;
+     margin: 0px auto;
 }
+table.tetris{
+    display: table;
 
-.tetris td{
+border: 1px solid #666;
+    margin: 0px;
+    padding: 0px;
+}
+table.tetris td{
     display: inline-block;
-   border: 1px solid #666;
+border: 0px; 
+    margin: 0px;
+    padding: 0px; 
     width: 25px;
     height: 25px;
-    background-color:#ccc;
+    
 }
+table.tetris tr{
+      
+    margin: 0px;
+    padding:0px; 
+}
+
 td.mark{
+    
     background-color: #454545;
-};
+}
 
 
 
