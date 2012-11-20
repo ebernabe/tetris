@@ -59,10 +59,10 @@ function writesquares(x1,y1,x2,y2,x3,y3,x4,y4){
 	a4 =x4;
 	b4 =y4;
 
-	mt[a1][b1]=1;
-	mt[a2][b2]=1;
-	mt[a3][b3]=1;
-	mt[a4][b4]=1;
+	mt[a1-1][b1-1]=1;
+	mt[a2-1][b2-1]=1;
+	mt[a3-1][b3-1]=1;
+	mt[a4-1][b4-1]=1;
 }
 
 function removerclase(){
@@ -95,12 +95,27 @@ function te(){
 function move(){
 
 		if  (((a1+1)<=24) && ((a2+1)<=24) && ((a3+1)<=24) && ((a4+1)<=24)){
+			mt[a1-1][b1-1]=0;
+			mt[a2-1][b2-1]=0;
+			mt[a3-1][b3-1]=0;
+			mt[a4-1][b4-1]=0;
+
+				if((mt[a1][b1-1]==0) && (mt[a2][b2-1]==0) && (mt[a3][b3-1]==0) && (mt[a4][b4-1]==0)){	
 					removerclase();
 					a1=a1+1; 
 					a2=a2+1; 
 					a3=a3+1; 
 					a4=a4+1; 
 					addclase();
+				}else{
+					inifigura();
+				}
+			
+			mt[a1-1][b1-1]=1;
+			mt[a2-1][b2-1]=1;
+			mt[a3-1][b3-1]=1;
+			mt[a4-1][b4-1]=1;	
+
 		}else{
 		            inifigura(); 
 		}
@@ -112,31 +127,56 @@ $(document).keydown(function(tecla){
               if (tecla.keyCode == 39) {
 
                 if  (((b1+1)<=12) && ((b2+1)<=12) && ((b3+1)<=12) && ((b4+1)<=12)){
+                	 mt[a1-1][b1-1]=0;
+					 mt[a2-1][b2-1]=0;
+					 mt[a3-1][b3-1]=0;
+					 mt[a4-1][b4-1]=0;
                 	 removerclase();
                      b1=b1+1;
                      b2=b2+1;
                      b3=b3+1;
                      b4=b4+1;
-					addclase();
+					 addclase();
+					 mt[a1-1][b1-1]=1;
+					 mt[a2-1][b2-1]=1;
+				  	 mt[a3-1][b3-1]=1;
+					 mt[a4-1][b4-1]=1;	
+
                  }
 
             }else if(tecla.keyCode == 37) {
                if  (((b1-1)>0) && ((b2-1)>0) && ((b3-1)>0) && ((b4-1)>0)){
+               		mt[a1-1][b1-1]=0;
+					mt[a2-1][b2-1]=0;
+					mt[a3-1][b3-1]=0;
+					mt[a4-1][b4-1]=0;
                 	removerclase();
                      b1=b1-1;
                      b2=b2-1;
                      b3=b3-1;
                      b4=b4-1;
 					addclase();
+					mt[a1-1][b1-1]=1;
+					mt[a2-1][b2-1]=1;
+				  	mt[a3-1][b3-1]=1;
+					mt[a4-1][b4-1]=1;	
                  }
             } else if(tecla.keyCode == 40){
             	 if  (((a1+1)<=24) && ((a2+1)<=24) && ((a3+1)<=24) && ((a4+1)<=24)){
+            	 	 	mt[a1-1][b1-1]=0;
+					 	mt[a2-1][b2-1]=0;
+					 	mt[a3-1][b3-1]=0;
+					 	mt[a4-1][b4-1]=0;
 						removerclase();
 						a1=a1+1; 
 						a2=a2+1; 
 						a3=a3+1; 
 						a4=a4+1; 
 						addclase();
+						mt[a1-1][b1-1]=1;
+					    mt[a2-1][b2-1]=1;
+				  	    mt[a3-1][b3-1]=1;
+					    mt[a4-1][b4-1]=1;	
 				}
             } 
  });
