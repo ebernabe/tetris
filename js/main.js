@@ -207,12 +207,12 @@ $(document).keydown(function(tecla){
 					mt[a3-1][b3-1]=0;
 					mt[a4-1][b4-1]=0;
 					if((mt[a1-1][b1-2]==0) && (mt[a2-1][b2-2]==0) && (mt[a3-1][b3-2]==0) && (mt[a4-1][b4-2]==0)){	
-                	removerclase();
-                     b1=b1-1;
-                     b2=b2-1;
-                     b3=b3-1;
-                     b4=b4-1;
-					addclase();
+	                	removerclase();
+	                     b1=b1-1;
+	                     b2=b2-1;
+	                     b3=b3-1;
+	                     b4=b4-1;
+						addclase();
 					}
 					mt[a1-1][b1-1]=1;
 					mt[a2-1][b2-1]=1;
@@ -244,10 +244,8 @@ $(document).keydown(function(tecla){
 				  	    mt[a3-1][b3-1]=1;
 					    mt[a4-1][b4-1]=1;	
 				}
-            } 
-  verificafilasllenas();          
+            }          
  });
-
 
 
 $(document).ready(function(){
