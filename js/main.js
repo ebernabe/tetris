@@ -21,13 +21,17 @@ for(i=0;i<=23;i++)
     }
 }
 
+function verificafilasllenas(){
 
+
+
+}
 
 
 
 function inifigura(){
 	shape = Math.floor((Math.random()*4)+1);
-
+    verificafilasllenas();
 			 
 			 switch(shape){
 			 	case 1:
