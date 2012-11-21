@@ -27,6 +27,7 @@ for(i=0;i<=23;i++)
 
 function inifigura(){
 	shape = Math.floor((Math.random()*4)+1);
+
 			 
 			 switch(shape){
 			 	case 1:
@@ -108,6 +109,10 @@ function move(){
 					a4=a4+1; 
 					addclase();
 				}else{
+					 mt[a1-1][b1-1]=1;
+					 mt[a2-1][b2-1]=1;
+				  	 mt[a3-1][b3-1]=1;
+					 mt[a4-1][b4-1]=1;	
 					inifigura();
 				}
 			
@@ -131,12 +136,14 @@ $(document).keydown(function(tecla){
 					 mt[a2-1][b2-1]=0;
 					 mt[a3-1][b3-1]=0;
 					 mt[a4-1][b4-1]=0;
-                	 removerclase();
-                     b1=b1+1;
-                     b2=b2+1;
-                     b3=b3+1;
-                     b4=b4+1;
-					 addclase();
+					 if((mt[a1-1][b1]==0) && (mt[a2-1][b2]==0) && (mt[a3-1][b3]==0) && (mt[a4-1][b4]==0)){	
+		                	 removerclase();
+		                     b1=b1+1;
+		                     b2=b2+1;
+		                     b3=b3+1;
+		                     b4=b4+1;
+							 addclase();
+					 }
 					 mt[a1-1][b1-1]=1;
 					 mt[a2-1][b2-1]=1;
 				  	 mt[a3-1][b3-1]=1;
@@ -150,12 +157,14 @@ $(document).keydown(function(tecla){
 					mt[a2-1][b2-1]=0;
 					mt[a3-1][b3-1]=0;
 					mt[a4-1][b4-1]=0;
+					if((mt[a1-1][b1-2]==0) && (mt[a2-1][b2-2]==0) && (mt[a3-1][b3-2]==0) && (mt[a4-1][b4-2]==0)){	
                 	removerclase();
                      b1=b1-1;
                      b2=b2-1;
                      b3=b3-1;
                      b4=b4-1;
 					addclase();
+					}
 					mt[a1-1][b1-1]=1;
 					mt[a2-1][b2-1]=1;
 				  	mt[a3-1][b3-1]=1;
@@ -167,12 +176,20 @@ $(document).keydown(function(tecla){
 					 	mt[a2-1][b2-1]=0;
 					 	mt[a3-1][b3-1]=0;
 					 	mt[a4-1][b4-1]=0;
-						removerclase();
-						a1=a1+1; 
-						a2=a2+1; 
-						a3=a3+1; 
-						a4=a4+1; 
-						addclase();
+                       if((mt[a1][b1-1]==0) && (mt[a2][b2-1]==0) && (mt[a3][b3-1]==0) && (mt[a4][b4-1]==0)){	
+							removerclase();
+							a1=a1+1; 
+							a2=a2+1; 
+							a3=a3+1; 
+							a4=a4+1; 
+							addclase();
+						}else{
+							mt[a1-1][b1-1]=1;
+					        mt[a2-1][b2-1]=1;
+				  	        mt[a3-1][b3-1]=1;
+					        mt[a4-1][b4-1]=1;	
+							inifigura();
+						}
 						mt[a1-1][b1-1]=1;
 					    mt[a2-1][b2-1]=1;
 				  	    mt[a3-1][b3-1]=1;
