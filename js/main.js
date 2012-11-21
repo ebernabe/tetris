@@ -13,6 +13,8 @@ var a3;
 var b3;
 var a4;
 var b4;
+var tiempo = 1000;
+
 for(i=0;i<=23;i++)
 {
     mt[i]=new Array(12);
@@ -20,11 +22,53 @@ for(i=0;i<=23;i++)
     	mt[i][j]=0;
     }
 }
+function imprimircuadros(){
+	for(i=0;i<=23;i++)
+		{
+		    for (j=0;j<=11;j++){
+		    	fila = i+1;
+		    	columna = j+1; 
+		    	 if(mt[i][j]==1){ 	
+		    	 		$(".tetris tr:nth-of-type("+fila+") td:nth-of-type("+columna+")").addClass("mark");
+		    	 }else{
+		    	 		$(".tetris tr:nth-of-type("+fila+") td:nth-of-type("+columna+")").removeClass("mark");
+		    	 }
+		    }
+		}
+
+}
+
+function acomodarfilas(i){
+var n;
+aux = mt;
+	for (n=0;n<=11;n++){
+	    	mt[i][n]=0;
+	    }
+
+	for (x=i;x>=0;x--){
+			for (j=0;j<=11;j++){
+				if((x-1)>=0){
+		    		mt[x][j]=aux[x-1][j];
+		    	}
+		    
+		    }
+	    }
+
+imprimircuadros();
+}
 
 function verificafilasllenas(){
-
-
-
+	var bandera=0;
+	for(i=0;i<=23;i++)
+	{
+	    for (j=0;j<=11;j++){
+	    	bandera = bandera + mt[i][j];
+	    }
+	    if(bandera==12){
+	    		acomodarfilas(i);
+	    }
+	    bandera=0;
+	}
 }
 
 
@@ -128,7 +172,8 @@ function move(){
 		}else{
 		            inifigura(); 
 		}
-   setTimeout(move, 1000);	
+	verificafilasllenas();	
+   setTimeout(move, tiempo);	
 }
 
 
@@ -200,12 +245,13 @@ $(document).keydown(function(tecla){
 					    mt[a4-1][b4-1]=1;	
 				}
             } 
+  verificafilasllenas();          
  });
 
 
 
 $(document).ready(function(){
 			inifigura();  
-			setTimeout("", 1000);
+			setTimeout("", tiempo);
 			move();
 });
