@@ -14,7 +14,8 @@ var b3;
 var a4;
 var b4;
 var tiempo = 1000;
-var start = 0;
+var start = 7;
+var pos = 0;
 
 for(i=0;i<=23;i++)
 {
@@ -23,6 +24,98 @@ for(i=0;i<=23;i++)
     	mt[i][j]=0;
     }
 }
+
+function figurapos(){
+	var n1 =0;
+	var n2 =0;
+	var n2 =0;
+	var n4 =0;
+	var m1 =0;
+	var m2 =0;
+	var m2 =0;
+	var m4 =0;
+
+	switch(shape){
+       case 3:
+   if(!pos){
+   	pos=1;
+    mt[a1-1][b1-1]=0;
+    mt[a2-1][b2-1]=0;
+    mt[a3-1][b3-1]=0;
+    mt[a4-1][b4-1]=0;
+
+    $(".tetris tr:nth-of-type("+a1+") td:nth-of-type("+b1+")").removeClass("mark");
+	$(".tetris tr:nth-of-type("+a2+") td:nth-of-type("+b2+")").removeClass("mark");
+	$(".tetris tr:nth-of-type("+a3+") td:nth-of-type("+b3+")").removeClass("mark");
+	$(".tetris tr:nth-of-type("+a4+") td:nth-of-type("+b4+")").removeClass("mark");
+      n4=a4+2;
+      m4=b4+2;
+      n1=a1+1;
+      m1=b1+1;
+      n3=a3-1;
+      m3=b3-1;
+      n2=a2;
+      m2=b2;
+    $(".tetris tr:nth-of-type("+n1+") td:nth-of-type("+m1+")").addClass("mark");
+	$(".tetris tr:nth-of-type("+n2+") td:nth-of-type("+m2+")").addClass("mark");
+	$(".tetris tr:nth-of-type("+n3+") td:nth-of-type("+m3+")").addClass("mark");
+	$(".tetris tr:nth-of-type("+n4+") td:nth-of-type("+m4+")").addClass("mark");
+ a1=n1;
+ b1=m1;
+ a2=n2;
+ b3=m3;
+ a3=n3;
+ b4=m4;
+ a4=n4;
+ b4=m4;
+        mt[a1-1][b1-1]=1;
+			mt[a2-1][b2-1]=1;
+			mt[a3-1][b3-1]=1;
+			mt[a4-1][b4-1]=1;	
+       }else{
+
+       pos=0;
+ mt[a1-1][b1-1]=0;
+    mt[a2-1][b2-1]=0;
+    mt[a3-1][b3-1]=0;
+    mt[a4-1][b4-1]=0;
+
+    $(".tetris tr:nth-of-type("+a1+") td:nth-of-type("+b1+")").removeClass("mark");
+	$(".tetris tr:nth-of-type("+a2+") td:nth-of-type("+b2+")").removeClass("mark");
+	$(".tetris tr:nth-of-type("+a3+") td:nth-of-type("+b3+")").removeClass("mark");
+	$(".tetris tr:nth-of-type("+a4+") td:nth-of-type("+b4+")").removeClass("mark");
+      n4=a4-2;
+      m4=b4-2;
+      n1=a1-1;
+      m1=b1-1;
+      n3=a3+1;
+      m3=b3+1;
+      n2=a2;
+      m2=b2;
+    $(".tetris tr:nth-of-type("+n1+") td:nth-of-type("+m1+")").addClass("mark");
+	$(".tetris tr:nth-of-type("+n2+") td:nth-of-type("+m2+")").addClass("mark");
+	$(".tetris tr:nth-of-type("+n3+") td:nth-of-type("+m3+")").addClass("mark");
+	$(".tetris tr:nth-of-type("+n4+") td:nth-of-type("+m4+")").addClass("mark");
+ a1=n1;
+ b1=m1;
+ a2=n2;
+ b3=m3;
+ a3=n3;
+ b4=m4;
+ a4=n4;
+ b4=m4;
+        mt[a1-1][b1-1]=1;
+			mt[a2-1][b2-1]=1;
+			mt[a3-1][b3-1]=1;
+			mt[a4-1][b4-1]=1;	
+
+
+       }
+       break;
+	}
+}
+
+
 function imprimircuadros(){
 	for(i=0;i<=23;i++)
 		{
@@ -143,7 +236,7 @@ function te(){
 }
 
 function move(){
-
+	if(start){//if start ini
 		if  (((a1+1)<=24) && ((a2+1)<=24) && ((a3+1)<=24) && ((a4+1)<=24)){
 			mt[a1-1][b1-1]=0;
 			mt[a2-1][b2-1]=0;
@@ -171,18 +264,24 @@ function move(){
 			mt[a4-1][b4-1]=1;	
 
 		}else{
-		            inifigura(); 
+		          verificafilasllenas();  
+		          inifigura();
+
 		}
-	verificafilasllenas();	
-   setTimeout(move, tiempo);	
+		
+   setTimeout(move, tiempo);
+
+   }//if start end
 }
 
 
 $(document).keydown(function(tecla){
 
+	if(start){//if start ini
+
 			 if (tecla.keyCode == 38) {
 
-
+			 		figurapos();
 
 			 }
 
@@ -245,6 +344,7 @@ $(document).keydown(function(tecla){
 					        mt[a2-1][b2-1]=1;
 				  	        mt[a3-1][b3-1]=1;
 					        mt[a4-1][b4-1]=1;	
+					        verificafilasllenas();  
 							inifigura();
 						}
 						mt[a1-1][b1-1]=1;
@@ -252,20 +352,27 @@ $(document).keydown(function(tecla){
 				  	    mt[a3-1][b3-1]=1;
 					    mt[a4-1][b4-1]=1;	
 				}
-            }          
+            }  
+    }//if start end                
  });
 
 
 $(document).ready(function(){
 	$("#start").click(function(){
+		if(start==7){
+		  inifigura();
+		  start=0;
+		}
 		if(!start){
-		   inifigura(); 
-
-		start=1;
-		    
+		   start=1;
 			//setTimeout("", tiempo);
 			move();  
 		}
 	});
+
+    $("#stop").click(function(){
+    	start=0;
+    });
+
 			
 });
