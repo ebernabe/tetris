@@ -14,6 +14,7 @@ var b3;
 var a4;
 var b4;
 var tiempo = 1000;
+var start = 0;
 
 for(i=0;i<=23;i++)
 {
@@ -178,6 +179,13 @@ function move(){
 
 
 $(document).keydown(function(tecla){
+
+			 if (tecla.keyCode == 38) {
+
+
+
+			 }
+
               if (tecla.keyCode == 39) {
 
                 if  (((b1+1)<=12) && ((b2+1)<=12) && ((b3+1)<=12) && ((b4+1)<=12)){
@@ -249,7 +257,15 @@ $(document).keydown(function(tecla){
 
 
 $(document).ready(function(){
-			inifigura();  
-			setTimeout("", tiempo);
-			move();
+	$("#start").click(function(){
+		if(!start){
+		   inifigura(); 
+
+		start=1;
+		    
+			//setTimeout("", tiempo);
+			move();  
+		}
+	});
+			
 });
