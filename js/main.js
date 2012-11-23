@@ -37,7 +37,7 @@ function figurapos(){
 
 	switch(shape){
        case 3:
-			   if(!pos){
+			   if(a1==a2){
 			   	pos=1;
 			    mt[a1-1][b1-1]=0;
 			    mt[a2-1][b2-1]=0;
@@ -48,14 +48,15 @@ function figurapos(){
 				$(".tetris tr:nth-of-type("+a2+") td:nth-of-type("+b2+")").removeClass("mark");
 				$(".tetris tr:nth-of-type("+a3+") td:nth-of-type("+b3+")").removeClass("mark");
 				$(".tetris tr:nth-of-type("+a4+") td:nth-of-type("+b4+")").removeClass("mark");
-			      n4=a4+2;
-			      m4=b4+2;
 			      n1=a1+1;
 			      m1=b1+1;
-			      n3=a3-1;
-			      m3=b3-1;
 			      n2=a2;
 			      m2=b2;
+			      n3=a3-1;
+			      m3=b3-1;
+			      n4=a4+2;
+			      m4=b4+2;
+                //alert(pos);
 			    $(".tetris tr:nth-of-type("+n1+") td:nth-of-type("+m1+")").addClass("mark");
 				$(".tetris tr:nth-of-type("+n2+") td:nth-of-type("+m2+")").addClass("mark");
 				$(".tetris tr:nth-of-type("+n3+") td:nth-of-type("+m3+")").addClass("mark");
@@ -81,19 +82,20 @@ function figurapos(){
 				    mt[a2-1][b2-1]=0;
 				    mt[a3-1][b3-1]=0;
 				    mt[a4-1][b4-1]=0;
-
+                //alert(pos);
 				    $(".tetris tr:nth-of-type("+a1+") td:nth-of-type("+b1+")").removeClass("mark");
 					$(".tetris tr:nth-of-type("+a2+") td:nth-of-type("+b2+")").removeClass("mark");
 					$(".tetris tr:nth-of-type("+a3+") td:nth-of-type("+b3+")").removeClass("mark");
 					$(".tetris tr:nth-of-type("+a4+") td:nth-of-type("+b4+")").removeClass("mark");
-				      n4=a4-2;
-				      m4=b4-2;
+				     
 				      n1=a1-1;
 				      m1=b1-1;
-				      n3=a3+1;
-				      m3=b3+1;
 				      n2=a2;
 				      m2=b2;
+					  n3=a3+1;
+				      m3=b3+1;
+				      n4=a4-2;
+				      m4=b4-2;
 				    $(".tetris tr:nth-of-type("+n1+") td:nth-of-type("+m1+")").addClass("mark");
 					$(".tetris tr:nth-of-type("+n2+") td:nth-of-type("+m2+")").addClass("mark");
 					$(".tetris tr:nth-of-type("+n3+") td:nth-of-type("+m3+")").addClass("mark");
@@ -116,7 +118,7 @@ function figurapos(){
        			}
        break;
 	}
-	$("#player1").html(""+a1+n1+"/"+b1+m1+"/"+a2+n2+"/"+b2+m2+"/"+a3+n3+"/"+b3+m3+"/"+a4+n4+"/"+b4+m4);
+	//$("#player1").html(""+a1+n1+"/"+b1+m1+"/"+a2+n2+"/"+b2+m2+"/"+a3+n3+"/"+b3+m3+"/"+a4+n4+"/"+b4+m4);
 	
 }
 
