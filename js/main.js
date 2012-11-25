@@ -4,8 +4,11 @@ Ernesto Bernabe
 Kevin Bernabe
 */
 var mt=new Array(24);//matrix tetris
+var filas = 0;
+var fichas = 0;
+var velocidad = 1;
 var shape;
-var a1;
+var a1; 
 var b1;
 var a2;
 var b2;
@@ -13,7 +16,7 @@ var a3;
 var b3;
 var a4;
 var b4;
-var tiempo = 1000;
+var tiempo = 2000;
 var start = 7;
 var pos = 0;
 
@@ -23,6 +26,13 @@ for(i=0;i<=23;i++)
     for (j=0;j<=11;j++){
     	mt[i][j]=0;
     }
+}
+
+function scores(){
+    $("#filas").html("Filas:"+filas);
+    $("#fichas").html("Figuras:"+fichas);
+    $("#velocidad").html("Velocidad:"+velocidad);
+
 }
 
 function figurapos(){
@@ -38,17 +48,15 @@ function figurapos(){
 	switch(shape){
        case 3:
 			   if(a1==a2){
+
+			   	if((a3-1)>0){
 			   	pos=1;
 			    mt[a1-1][b1-1]=0;
 			    mt[a2-1][b2-1]=0;
 			    mt[a3-1][b3-1]=0;
 			    mt[a4-1][b4-1]=0;
 
-			    $(".tetris tr:nth-of-type("+a1+") td:nth-of-type("+b1+")").removeClass("mark");
-				$(".tetris tr:nth-of-type("+a2+") td:nth-of-type("+b2+")").removeClass("mark");
-				$(".tetris tr:nth-of-type("+a3+") td:nth-of-type("+b3+")").removeClass("mark");
-				$(".tetris tr:nth-of-type("+a4+") td:nth-of-type("+b4+")").removeClass("mark");
-			      n1=a1+1;
+			    n1=a1+1;
 			      m1=b1+1;
 			      n2=a2;
 			      m2=b2;
@@ -56,6 +64,13 @@ function figurapos(){
 			      m3=b3-1;
 			      n4=a4+2;
 			      m4=b4+2;
+			      if(mt[n1-1][m1-1]==0 && mt[n2-1][m2-1]==0 && mt[n3-1][m3-1]==0 && mt[n4-1][m4-1]==0){
+
+			    $(".tetris tr:nth-of-type("+a1+") td:nth-of-type("+b1+")").removeClass("mark");
+				$(".tetris tr:nth-of-type("+a2+") td:nth-of-type("+b2+")").removeClass("mark");
+				$(".tetris tr:nth-of-type("+a3+") td:nth-of-type("+b3+")").removeClass("mark");
+				$(".tetris tr:nth-of-type("+a4+") td:nth-of-type("+b4+")").removeClass("mark");
+			      
                 //alert(pos);
 			    $(".tetris tr:nth-of-type("+n1+") td:nth-of-type("+m1+")").addClass("mark");
 				$(".tetris tr:nth-of-type("+n2+") td:nth-of-type("+m2+")").addClass("mark");
@@ -69,12 +84,13 @@ function figurapos(){
 					 a3=n3;
 					 b4=m4;
 					 a4=n4;
-					 
+					} 
 			        mt[a1-1][b1-1]=1;
 					mt[a2-1][b2-1]=1;
 					mt[a3-1][b3-1]=1;
 					mt[a4-1][b4-1]=1;
-
+					
+					}
       			 }else{
 				 pos=0;
 				 
@@ -82,12 +98,7 @@ function figurapos(){
 				    mt[a2-1][b2-1]=0;
 				    mt[a3-1][b3-1]=0;
 				    mt[a4-1][b4-1]=0;
-                //alert(pos);
-				    $(".tetris tr:nth-of-type("+a1+") td:nth-of-type("+b1+")").removeClass("mark");
-					$(".tetris tr:nth-of-type("+a2+") td:nth-of-type("+b2+")").removeClass("mark");
-					$(".tetris tr:nth-of-type("+a3+") td:nth-of-type("+b3+")").removeClass("mark");
-					$(".tetris tr:nth-of-type("+a4+") td:nth-of-type("+b4+")").removeClass("mark");
-				     
+
 				      n1=a1-1;
 				      m1=b1-1;
 				      n2=a2;
@@ -96,6 +107,14 @@ function figurapos(){
 				      m3=b3+1;
 				      n4=a4-2;
 				      m4=b4-2;
+
+				if(mt[n1-1][m1-1]==0 && mt[n2-1][m2-1]==0 && mt[n3-1][m3-1]==0 && mt[n4-1][m4-1]==0){				    
+                //alert(pos);
+				    $(".tetris tr:nth-of-type("+a1+") td:nth-of-type("+b1+")").removeClass("mark");
+					$(".tetris tr:nth-of-type("+a2+") td:nth-of-type("+b2+")").removeClass("mark");
+					$(".tetris tr:nth-of-type("+a3+") td:nth-of-type("+b3+")").removeClass("mark");
+					$(".tetris tr:nth-of-type("+a4+") td:nth-of-type("+b4+")").removeClass("mark");
+				     
 				    $(".tetris tr:nth-of-type("+n1+") td:nth-of-type("+m1+")").addClass("mark");
 					$(".tetris tr:nth-of-type("+n2+") td:nth-of-type("+m2+")").addClass("mark");
 					$(".tetris tr:nth-of-type("+n3+") td:nth-of-type("+m3+")").addClass("mark");
@@ -108,7 +127,7 @@ function figurapos(){
 					 a3=n3;
 					 b4=m4;
 					 a4=n4;
-					 
+					 }
 				    mt[a1-1][b1-1]=1;
 					mt[a2-1][b2-1]=1;
 					mt[a3-1][b3-1]=1;
@@ -121,6 +140,27 @@ function figurapos(){
 	//$("#player1").html(""+a1+n1+"/"+b1+m1+"/"+a2+n2+"/"+b2+m2+"/"+a3+n3+"/"+b3+m3+"/"+a4+n4+"/"+b4+m4);
 	
 }
+
+
+function cleartable(){
+	filax=0;
+	columnax=0;
+	filas=0;
+	fichas=0;
+	velocidad=0;
+	for(i=0;i<=23;i++)
+		{
+		    for (j=0;j<=11;j++){
+		    	filax = i+1;
+		    	columnax = j+1; 
+		   	 mt[i][j]=0;
+		        $(".tetris tr:nth-of-type("+filax+") td:nth-of-type("+columnax+")").removeClass("mark");
+		 
+		    }
+		}
+		scores();
+}
+
 
 
 function imprimircuadros(){
@@ -167,6 +207,7 @@ function verificafilasllenas(){
 	    }
 	    if(bandera==12){
 	    		acomodarfilas(i);
+	    		filas=filas+1;
 	    }
 	    bandera=0;
 	}
@@ -192,27 +233,37 @@ function inifigura(){
 			 		te();
 			 	break;
 			 }
+			 fichas=fichas+1;
+			  if((fichas%30)==0){
+			    	velocidad = velocidad +1;
+			    }
 }
 
 
 function writesquares(x1,y1,x2,y2,x3,y3,x4,y4){
-	$(".tetris tr:nth-of-type("+x1+") td:nth-of-type("+y1+")").addClass("mark");
-	$(".tetris tr:nth-of-type("+x2+") td:nth-of-type("+y2+")").addClass("mark");
-	$(".tetris tr:nth-of-type("+x3+") td:nth-of-type("+y3+")").addClass("mark");
-	$(".tetris tr:nth-of-type("+x4+") td:nth-of-type("+y4+")").addClass("mark");
-	a1 = x1;
-	b1 = y1;
-	a2 = x2;
-	b2 = y2;
-	a3 = x3;
-	b3 = y3;
-	a4 = x4;
-	b4 = y4;
+	if(mt[x1-1][y1-1]==0 && mt[x2-1][y2-1]==0 && mt[x3-1][y3-1]==0 && mt[x4-1][y4-1]==0){				    
+		$(".tetris tr:nth-of-type("+x1+") td:nth-of-type("+y1+")").addClass("mark");
+		$(".tetris tr:nth-of-type("+x2+") td:nth-of-type("+y2+")").addClass("mark");
+		$(".tetris tr:nth-of-type("+x3+") td:nth-of-type("+y3+")").addClass("mark");
+		$(".tetris tr:nth-of-type("+x4+") td:nth-of-type("+y4+")").addClass("mark");
+		a1 = x1;
+		b1 = y1;
+		a2 = x2;
+		b2 = y2;
+		a3 = x3;
+		b3 = y3;
+		a4 = x4;
+		b4 = y4;
 
-	mt[a1-1][b1-1]=1;
-	mt[a2-1][b2-1]=1;
-	mt[a3-1][b3-1]=1;
-	mt[a4-1][b4-1]=1;
+		mt[a1-1][b1-1]=1;
+		mt[a2-1][b2-1]=1;
+		mt[a3-1][b3-1]=1;
+		mt[a4-1][b4-1]=1;
+	}else{
+		start=0;
+		alert("Game Over");
+		cleartable();
+	}
 }
 
 function removerclase(){
@@ -276,9 +327,10 @@ function move(){
 
 		}
 		
-   setTimeout(move, tiempo);
+   setTimeout(move, tiempo-(velocidad*20));
 //$("#player1").html(""+a1+"/"+b1+"/"+a2+"/"+b2+"/"+a3+"/"+b3+"/"+a4+"/"+b4);
    }//if start end
+   scores();
 }
 
 
