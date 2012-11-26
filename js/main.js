@@ -66,24 +66,24 @@ function figurapos(){
 			      m4=b4+2;
 			      if(mt[n1-1][m1-1]==0 && mt[n2-1][m2-1]==0 && mt[n3-1][m3-1]==0 && mt[n4-1][m4-1]==0){
 
-			    $(".tetris tr:nth-of-type("+a1+") td:nth-of-type("+b1+")").removeClass("mark");
-				$(".tetris tr:nth-of-type("+a2+") td:nth-of-type("+b2+")").removeClass("mark");
-				$(".tetris tr:nth-of-type("+a3+") td:nth-of-type("+b3+")").removeClass("mark");
-				$(".tetris tr:nth-of-type("+a4+") td:nth-of-type("+b4+")").removeClass("mark");
-			      
-                //alert(pos);
-			    $(".tetris tr:nth-of-type("+n1+") td:nth-of-type("+m1+")").addClass("mark");
-				$(".tetris tr:nth-of-type("+n2+") td:nth-of-type("+m2+")").addClass("mark");
-				$(".tetris tr:nth-of-type("+n3+") td:nth-of-type("+m3+")").addClass("mark");
-				$(".tetris tr:nth-of-type("+n4+") td:nth-of-type("+m4+")").addClass("mark");
-					 a1=n1;
-					 b1=m1;
-					 a2=n2;
-					 b2=m2;
-					 b3=m3;
-					 a3=n3;
-					 b4=m4;
-					 a4=n4;
+					    $(".tetris tr:nth-of-type("+a1+") td:nth-of-type("+b1+")").removeClass("mark");
+						$(".tetris tr:nth-of-type("+a2+") td:nth-of-type("+b2+")").removeClass("mark");
+						$(".tetris tr:nth-of-type("+a3+") td:nth-of-type("+b3+")").removeClass("mark");
+						$(".tetris tr:nth-of-type("+a4+") td:nth-of-type("+b4+")").removeClass("mark");
+					      
+		                //alert(pos);
+					    $(".tetris tr:nth-of-type("+n1+") td:nth-of-type("+m1+")").addClass("mark");
+						$(".tetris tr:nth-of-type("+n2+") td:nth-of-type("+m2+")").addClass("mark");
+						$(".tetris tr:nth-of-type("+n3+") td:nth-of-type("+m3+")").addClass("mark");
+						$(".tetris tr:nth-of-type("+n4+") td:nth-of-type("+m4+")").addClass("mark");
+							 a1=n1;
+							 b1=m1;
+							 a2=n2;
+							 b2=m2;
+							 b3=m3;
+							 a3=n3;
+							 b4=m4;
+							 a4=n4;
 					} 
 			        mt[a1-1][b1-1]=1;
 					mt[a2-1][b2-1]=1;
@@ -136,6 +136,16 @@ function figurapos(){
 
        			}
        break;
+       case 4:
+       		if(a1==(a2-1){
+
+
+			}
+       break;
+
+
+
+
 	}
 	//$("#player1").html(""+a1+n1+"/"+b1+m1+"/"+a2+n2+"/"+b2+m2+"/"+a3+n3+"/"+b3+m3+"/"+a4+n4+"/"+b4+m4);
 	
@@ -327,7 +337,7 @@ function move(){
 
 		}
 		
-   setTimeout(move, tiempo-(velocidad*20));
+   setTimeout(move, tiempo-(velocidad*10));
 //$("#player1").html(""+a1+"/"+b1+"/"+a2+"/"+b2+"/"+a3+"/"+b3+"/"+a4+"/"+b4);
    }//if start end
    scores();
