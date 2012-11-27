@@ -104,18 +104,20 @@ textarea {
 }
 table.tetris{
     display: table;
+    height: auto;
+    width: auto;
 
 border: 1px solid #666;
     margin: 0px;
     padding: 0px;
 }
 table.tetris td{
-    display: inline-block;
+    display:table-cell;
 border: 0px; 
     margin: 0px;
     padding: 0px; 
-    width: 25px;
-    height: 25px;
+    width: 15px;
+    height: 15px;
     
 }
 table.tetris tr{
