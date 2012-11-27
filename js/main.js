@@ -137,7 +137,343 @@ function figurapos(){
        			}
        break;
        case 4:
-       		if(a1==(a2-1){
+       		if(a1==(a3-1)){
+       				pos=1;
+       				 mt[a1-1][b1-1]=0;
+			    mt[a2-1][b2-1]=0;
+			    mt[a3-1][b3-1]=0;
+			    mt[a4-1][b4-1]=0;
+			          n1=a1+1;
+				      m1=b1-1;
+				      n2=a2+1;
+				      m2=b2+1;
+					  n3=a3;
+				      m3=b3;
+				      n4=a4-1;
+				      m4=b4-1;
+			if(mt[n1-1][m1-1]==0 && mt[n2-1][m2-1]==0 && mt[n3-1][m3-1]==0 && mt[n4-1][m4-1]==0){
+			
+                    $(".tetris tr:nth-of-type("+a1+") td:nth-of-type("+b1+")").removeClass("mark");
+					$(".tetris tr:nth-of-type("+a2+") td:nth-of-type("+b2+")").removeClass("mark");
+					$(".tetris tr:nth-of-type("+a3+") td:nth-of-type("+b3+")").removeClass("mark");
+					$(".tetris tr:nth-of-type("+a4+") td:nth-of-type("+b4+")").removeClass("mark");
+				     
+				    $(".tetris tr:nth-of-type("+n1+") td:nth-of-type("+m1+")").addClass("mark");
+					$(".tetris tr:nth-of-type("+n2+") td:nth-of-type("+m2+")").addClass("mark");
+					$(".tetris tr:nth-of-type("+n3+") td:nth-of-type("+m3+")").addClass("mark");
+					$(".tetris tr:nth-of-type("+n4+") td:nth-of-type("+m4+")").addClass("mark");
+					 a1=n1;
+					 b1=m1;
+					 a2=n2;
+					 b2=m2;
+					 b3=m3;
+					 a3=n3;
+					 b4=m4;
+					 a4=n4;
+			}
+				 mt[a1-1][b1-1]=1;
+					mt[a2-1][b2-1]=1;
+					mt[a3-1][b3-1]=1;
+					mt[a4-1][b4-1]=1;	
+                          
+
+			}else if(a4==(a2-2)){
+pos=2;
+       				 mt[a1-1][b1-1]=0;
+			    mt[a2-1][b2-1]=0;
+			    mt[a3-1][b3-1]=0;
+			    mt[a4-1][b4-1]=0;
+			          n1=a1+1;
+				      m1=b1+1;
+				      n2=a2-1;
+				      m2=b2+1;
+					  n3=a3;
+				      m3=b3;
+				      n4=a4+1;
+				      m4=b4-1;
+			if(mt[n1-1][m1-1]==0 && mt[n2-1][m2-1]==0 && mt[n3-1][m3-1]==0 && mt[n4-1][m4-1]==0){
+			
+                    $(".tetris tr:nth-of-type("+a1+") td:nth-of-type("+b1+")").removeClass("mark");
+					$(".tetris tr:nth-of-type("+a2+") td:nth-of-type("+b2+")").removeClass("mark");
+					$(".tetris tr:nth-of-type("+a3+") td:nth-of-type("+b3+")").removeClass("mark");
+					$(".tetris tr:nth-of-type("+a4+") td:nth-of-type("+b4+")").removeClass("mark");
+				     
+				    $(".tetris tr:nth-of-type("+n1+") td:nth-of-type("+m1+")").addClass("mark");
+					$(".tetris tr:nth-of-type("+n2+") td:nth-of-type("+m2+")").addClass("mark");
+					$(".tetris tr:nth-of-type("+n3+") td:nth-of-type("+m3+")").addClass("mark");
+					$(".tetris tr:nth-of-type("+n4+") td:nth-of-type("+m4+")").addClass("mark");
+					 a1=n1;
+					 b1=m1;
+					 a2=n2;
+					 b2=m2;
+					 b3=m3;
+					 a3=n3;
+					 b4=m4;
+					 a4=n4;
+					}
+					 mt[a1-1][b1-1]=1;
+					mt[a2-1][b2-1]=1;
+					mt[a3-1][b3-1]=1;
+					mt[a4-1][b4-1]=1;	
+			}else if(a3==(a1-1)){
+pos=3;
+       				 mt[a1-1][b1-1]=0;
+			    mt[a2-1][b2-1]=0;
+			    mt[a3-1][b3-1]=0;
+			    mt[a4-1][b4-1]=0;
+			          n1=a1-1;
+				      m1=b1+1;
+				      n2=a2-1;
+				      m2=b2-1;
+					  n3=a3;
+				      m3=b3;
+				      n4=a4+1;
+				      m4=b4+1;
+			if(mt[n1-1][m1-1]==0 && mt[n2-1][m2-1]==0 && mt[n3-1][m3-1]==0 && mt[n4-1][m4-1]==0){
+			
+                    $(".tetris tr:nth-of-type("+a1+") td:nth-of-type("+b1+")").removeClass("mark");
+					$(".tetris tr:nth-of-type("+a2+") td:nth-of-type("+b2+")").removeClass("mark");
+					$(".tetris tr:nth-of-type("+a3+") td:nth-of-type("+b3+")").removeClass("mark");
+					$(".tetris tr:nth-of-type("+a4+") td:nth-of-type("+b4+")").removeClass("mark");
+				     
+				    $(".tetris tr:nth-of-type("+n1+") td:nth-of-type("+m1+")").addClass("mark");
+					$(".tetris tr:nth-of-type("+n2+") td:nth-of-type("+m2+")").addClass("mark");
+					$(".tetris tr:nth-of-type("+n3+") td:nth-of-type("+m3+")").addClass("mark");
+					$(".tetris tr:nth-of-type("+n4+") td:nth-of-type("+m4+")").addClass("mark");
+					 a1=n1;
+					 b1=m1;
+					 a2=n2;
+					 b2=m2;
+					 b3=m3;
+					 a3=n3;
+					 b4=m4;
+					 a4=n4;
+					}
+					 mt[a1-1][b1-1]=1;
+					mt[a2-1][b2-1]=1;
+					mt[a3-1][b3-1]=1;
+					mt[a4-1][b4-1]=1;	
+
+
+
+
+
+			}else if(a3==a1){
+pos=0;
+       				 mt[a1-1][b1-1]=0;
+			    mt[a2-1][b2-1]=0;
+			    mt[a3-1][b3-1]=0;
+			    mt[a4-1][b4-1]=0;
+			          n1=a1-1;
+				      m1=b1-1;
+				      n2=a2+1;
+				      m2=b2-1;
+					  n3=a3;
+				      m3=b3;
+				      n4=a4-1;
+				      m4=b4+1;
+			if(mt[n1-1][m1-1]==0 && mt[n2-1][m2-1]==0 && mt[n3-1][m3-1]==0 && mt[n4-1][m4-1]==0){
+			
+                    $(".tetris tr:nth-of-type("+a1+") td:nth-of-type("+b1+")").removeClass("mark");
+					$(".tetris tr:nth-of-type("+a2+") td:nth-of-type("+b2+")").removeClass("mark");
+					$(".tetris tr:nth-of-type("+a3+") td:nth-of-type("+b3+")").removeClass("mark");
+					$(".tetris tr:nth-of-type("+a4+") td:nth-of-type("+b4+")").removeClass("mark");
+				     
+				    $(".tetris tr:nth-of-type("+n1+") td:nth-of-type("+m1+")").addClass("mark");
+					$(".tetris tr:nth-of-type("+n2+") td:nth-of-type("+m2+")").addClass("mark");
+					$(".tetris tr:nth-of-type("+n3+") td:nth-of-type("+m3+")").addClass("mark");
+					$(".tetris tr:nth-of-type("+n4+") td:nth-of-type("+m4+")").addClass("mark");
+					 a1=n1;
+					 b1=m1;
+					 a2=n2;
+					 b2=m2;
+					 b3=m3;
+					 a3=n3;
+					 b4=m4;
+					 a4=n4;
+					}
+					 mt[a1-1][b1-1]=1;
+					mt[a2-1][b2-1]=1;
+					mt[a3-1][b3-1]=1;
+					mt[a4-1][b4-1]=1;	
+
+
+
+
+
+			}
+       break;
+       case 2:
+       		if(a1==a2 && a1 == a3 && a3 == (a4-1)){
+pos=1;
+       				 mt[a1-1][b1-1]=0;
+			    mt[a2-1][b2-1]=0;
+			    mt[a3-1][b3-1]=0;
+			    mt[a4-1][b4-1]=0;
+			          n1=a1-1;
+				      m1=b1+1;
+				      n2=a2;
+				      m2=b2;
+					  n3=a3+1;
+				      m3=b3-1;
+				      n4=a4;
+				      m4=b4-2;
+			if(mt[n1-1][m1-1]==0 && mt[n2-1][m2-1]==0 && mt[n3-1][m3-1]==0 && mt[n4-1][m4-1]==0){
+			
+                    $(".tetris tr:nth-of-type("+a1+") td:nth-of-type("+b1+")").removeClass("mark");
+					$(".tetris tr:nth-of-type("+a2+") td:nth-of-type("+b2+")").removeClass("mark");
+					$(".tetris tr:nth-of-type("+a3+") td:nth-of-type("+b3+")").removeClass("mark");
+					$(".tetris tr:nth-of-type("+a4+") td:nth-of-type("+b4+")").removeClass("mark");
+				     
+				    $(".tetris tr:nth-of-type("+n1+") td:nth-of-type("+m1+")").addClass("mark");
+					$(".tetris tr:nth-of-type("+n2+") td:nth-of-type("+m2+")").addClass("mark");
+					$(".tetris tr:nth-of-type("+n3+") td:nth-of-type("+m3+")").addClass("mark");
+					$(".tetris tr:nth-of-type("+n4+") td:nth-of-type("+m4+")").addClass("mark");
+					 a1=n1;
+					 b1=m1;
+					 a2=n2;
+					 b2=m2;
+					 b3=m3;
+					 a3=n3;
+					 b4=m4;
+					 a4=n4;
+					}
+					 mt[a1-1][b1-1]=1;
+					mt[a2-1][b2-1]=1;
+					mt[a3-1][b3-1]=1;
+					mt[a4-1][b4-1]=1;	
+
+
+
+
+
+			}else if(b1==b2 && b1 == b3 && a1==(a4-2)){
+pos=2;
+       				 mt[a1-1][b1-1]=0;
+			    mt[a2-1][b2-1]=0;
+			    mt[a3-1][b3-1]=0;
+			    mt[a4-1][b4-1]=0;
+			          n1=a1+1;
+				      m1=b1+1;
+				      n2=a2;
+				      m2=b2;
+					  n3=a3-1;
+				      m3=b3-1;
+				      n4=a4-2;
+				      m4=b4;
+			if(mt[n1-1][m1-1]==0 && mt[n2-1][m2-1]==0 && mt[n3-1][m3-1]==0 && mt[n4-1][m4-1]==0){
+			
+                    $(".tetris tr:nth-of-type("+a1+") td:nth-of-type("+b1+")").removeClass("mark");
+					$(".tetris tr:nth-of-type("+a2+") td:nth-of-type("+b2+")").removeClass("mark");
+					$(".tetris tr:nth-of-type("+a3+") td:nth-of-type("+b3+")").removeClass("mark");
+					$(".tetris tr:nth-of-type("+a4+") td:nth-of-type("+b4+")").removeClass("mark");
+				     
+				    $(".tetris tr:nth-of-type("+n1+") td:nth-of-type("+m1+")").addClass("mark");
+					$(".tetris tr:nth-of-type("+n2+") td:nth-of-type("+m2+")").addClass("mark");
+					$(".tetris tr:nth-of-type("+n3+") td:nth-of-type("+m3+")").addClass("mark");
+					$(".tetris tr:nth-of-type("+n4+") td:nth-of-type("+m4+")").addClass("mark");
+					 a1=n1;
+					 b1=m1;
+					 a2=n2;
+					 b2=m2;
+					 b3=m3;
+					 a3=n3;
+					 b4=m4;
+					 a4=n4;
+					}
+					 mt[a1-1][b1-1]=1;
+					mt[a2-1][b2-1]=1;
+					mt[a3-1][b3-1]=1;
+					mt[a4-1][b4-1]=1;	
+
+
+
+
+
+			}else if(a1==a2 && a1 == a3 && a3 == (a4+1)){
+pos=3;
+       				 mt[a1-1][b1-1]=0;
+			    mt[a2-1][b2-1]=0;
+			    mt[a3-1][b3-1]=0;
+			    mt[a4-1][b4-1]=0;
+			          n1=a1+1;
+				      m1=b1-1;
+				      n2=a2;
+				      m2=b2;
+					  n3=a3-1;
+				      m3=b3+1;
+				      n4=a4;
+				      m4=b4+2;
+			if(mt[n1-1][m1-1]==0 && mt[n2-1][m2-1]==0 && mt[n3-1][m3-1]==0 && mt[n4-1][m4-1]==0){
+			
+                    $(".tetris tr:nth-of-type("+a1+") td:nth-of-type("+b1+")").removeClass("mark");
+					$(".tetris tr:nth-of-type("+a2+") td:nth-of-type("+b2+")").removeClass("mark");
+					$(".tetris tr:nth-of-type("+a3+") td:nth-of-type("+b3+")").removeClass("mark");
+					$(".tetris tr:nth-of-type("+a4+") td:nth-of-type("+b4+")").removeClass("mark");
+				     
+				    $(".tetris tr:nth-of-type("+n1+") td:nth-of-type("+m1+")").addClass("mark");
+					$(".tetris tr:nth-of-type("+n2+") td:nth-of-type("+m2+")").addClass("mark");
+					$(".tetris tr:nth-of-type("+n3+") td:nth-of-type("+m3+")").addClass("mark");
+					$(".tetris tr:nth-of-type("+n4+") td:nth-of-type("+m4+")").addClass("mark");
+					 a1=n1;
+					 b1=m1;
+					 a2=n2;
+					 b2=m2;
+					 b3=m3;
+					 a3=n3;
+					 b4=m4;
+					 a4=n4;
+					}
+					 mt[a1-1][b1-1]=1;
+					mt[a2-1][b2-1]=1;
+					mt[a3-1][b3-1]=1;
+					mt[a4-1][b4-1]=1;	
+
+
+
+
+
+			}else if(b1==b2 && b1 == b3 && a3==a4){
+pos=0;
+       				 mt[a1-1][b1-1]=0;
+			    mt[a2-1][b2-1]=0;
+			    mt[a3-1][b3-1]=0;
+			    mt[a4-1][b4-1]=0;
+			          n1=a1-1;
+				      m1=b1-1;
+				      n2=a2;
+				      m2=b2;
+					  n3=a3+1;
+				      m3=b3+1;
+				      n4=a4+2;
+				      m4=b4;
+			if(mt[n1-1][m1-1]==0 && mt[n2-1][m2-1]==0 && mt[n3-1][m3-1]==0 && mt[n4-1][m4-1]==0){
+			
+                    $(".tetris tr:nth-of-type("+a1+") td:nth-of-type("+b1+")").removeClass("mark");
+					$(".tetris tr:nth-of-type("+a2+") td:nth-of-type("+b2+")").removeClass("mark");
+					$(".tetris tr:nth-of-type("+a3+") td:nth-of-type("+b3+")").removeClass("mark");
+					$(".tetris tr:nth-of-type("+a4+") td:nth-of-type("+b4+")").removeClass("mark");
+				     
+				    $(".tetris tr:nth-of-type("+n1+") td:nth-of-type("+m1+")").addClass("mark");
+					$(".tetris tr:nth-of-type("+n2+") td:nth-of-type("+m2+")").addClass("mark");
+					$(".tetris tr:nth-of-type("+n3+") td:nth-of-type("+m3+")").addClass("mark");
+					$(".tetris tr:nth-of-type("+n4+") td:nth-of-type("+m4+")").addClass("mark");
+					 a1=n1;
+					 b1=m1;
+					 a2=n2;
+					 b2=m2;
+					 b3=m3;
+					 a3=n3;
+					 b4=m4;
+					 a4=n4;
+					}
+					 mt[a1-1][b1-1]=1;
+					mt[a2-1][b2-1]=1;
+					mt[a3-1][b3-1]=1;
+					mt[a4-1][b4-1]=1;	
+
+
+
 
 
 			}
@@ -205,7 +541,7 @@ aux = mt;
 		    }
 	    }
 
-imprimircuadros();
+
 }
 
 function verificafilasllenas(){
@@ -221,6 +557,7 @@ function verificafilasllenas(){
 	    }
 	    bandera=0;
 	}
+	imprimircuadros();
 }
 
 
@@ -322,30 +659,38 @@ function move(){
 					 mt[a1-1][b1-1]=1;
 					 mt[a2-1][b2-1]=1;
 				  	 mt[a3-1][b3-1]=1;
-					 mt[a4-1][b4-1]=1;	
+					 mt[a4-1][b4-1]=1;	 
 					inifigura();
+		    //        verificafilasllenas();  					
 				}
 			
 			mt[a1-1][b1-1]=1;
 			mt[a2-1][b2-1]=1;
 			mt[a3-1][b3-1]=1;
 			mt[a4-1][b4-1]=1;	
-
+			//		if(a1==24 || a2==24 || a3==24 || a4==24){
+			//		         verificafilasllenas();  
+			//				}
 		}else{
-		          verificafilasllenas();  
+
 		          inifigura();
+   		      //    verificafilasllenas();  
 
 		}
 		
+		
    setTimeout(move, tiempo-(velocidad*10));
+
 //$("#player1").html(""+a1+"/"+b1+"/"+a2+"/"+b2+"/"+a3+"/"+b3+"/"+a4+"/"+b4);
    }//if start end
+verificafilasllenas();  
    scores();
+
 }
 
 
 $(document).keydown(function(tecla){
-
+ 
 	if(start){//if start ini
 
 			 if (tecla.keyCode == 38) {
@@ -373,6 +718,7 @@ $(document).keydown(function(tecla){
 					 mt[a2-1][b2-1]=1;
 				  	 mt[a3-1][b3-1]=1;
 					 mt[a4-1][b4-1]=1;	
+
 
                  }
 
@@ -413,15 +759,20 @@ $(document).keydown(function(tecla){
 					        mt[a2-1][b2-1]=1;
 				  	        mt[a3-1][b3-1]=1;
 					        mt[a4-1][b4-1]=1;	
-					        verificafilasllenas();  
+
 							inifigura();
+					       // verificafilasllenas();  
 						}
 						mt[a1-1][b1-1]=1;
 					    mt[a2-1][b2-1]=1;
 				  	    mt[a3-1][b3-1]=1;
 					    mt[a4-1][b4-1]=1;	
 				}
+			
             }  
+            //		if(a1==24 || a2==24 || a3==24 || a4==24){
+			//		         verificafilasllenas();  
+			//				}
     }//if start end                
  });
 
