@@ -8,6 +8,7 @@ var filas = 0;
 var fichas = 0;
 var velocidad = 1;
 var shape;
+var shapex;
 var a1; 
 var b1;
 var a2;
@@ -16,6 +17,16 @@ var a3;
 var b3;
 var a4;
 var b4;
+
+
+var nf1 = 0;
+var nc1 = 0;
+var nf2 = 0;
+var nc2 = 0;
+var nf3 = 0;
+var nc3 = 0;
+var nf4 = 0;
+var nc4 = 0;
 
  
 var tiempo = 2000;
@@ -47,7 +58,7 @@ function figurapos(){
 	var m3 = 0;
 	var m4 = 0;
 
-	switch(shape){
+	switch(shapex){
        case 3:
 			   if(a1==a2){
 
@@ -58,7 +69,7 @@ function figurapos(){
 			    mt[a3-1][b3-1]=0;
 			    mt[a4-1][b4-1]=0;
 
-			    n1=a1+1;
+			      n1=a1+1;
 			      m1=b1+1;
 			      n2=a2;
 			      m2=b2;
@@ -180,7 +191,7 @@ function figurapos(){
                           
 
 			}else if(a4==(a2-2)){
-pos=2;
+				pos=2;
        				 mt[a1-1][b1-1]=0;
 			    mt[a2-1][b2-1]=0;
 			    mt[a3-1][b3-1]=0;
@@ -218,7 +229,7 @@ pos=2;
 					mt[a3-1][b3-1]=1;
 					mt[a4-1][b4-1]=1;	
 			}else if(a3==(a1-1)){
-pos=3;
+				pos=3;
        				 mt[a1-1][b1-1]=0;
 			    mt[a2-1][b2-1]=0;
 			    mt[a3-1][b3-1]=0;
@@ -565,6 +576,7 @@ function verificafilasllenas(){
 
 
 function inifigura(){
+	shapex = shape;
 	shape = Math.floor((Math.random()*4)+1);
     verificafilasllenas();
 			 
@@ -591,30 +603,66 @@ function inifigura(){
 
 function writesquares(x1,y1,x2,y2,x3,y3,x4,y4){
 	if(mt[x1-1][y1-1]==0 && mt[x2-1][y2-1]==0 && mt[x3-1][y3-1]==0 && mt[x4-1][y4-1]==0){				    
-		$(".tetris tr:nth-of-type("+x1+") td:nth-of-type("+y1+")").addClass("mark");
+		/*$(".tetris tr:nth-of-type("+x1+") td:nth-of-type("+y1+")").addClass("mark");
 		$(".tetris tr:nth-of-type("+x2+") td:nth-of-type("+y2+")").addClass("mark");
 		$(".tetris tr:nth-of-type("+x3+") td:nth-of-type("+y3+")").addClass("mark");
-		$(".tetris tr:nth-of-type("+x4+") td:nth-of-type("+y4+")").addClass("mark");
+		$(".tetris tr:nth-of-type("+x4+") td:nth-of-type("+y4+")").addClass("mark");*/
 		
 
+			if (nf1==0){
+				  nf1 = x1;
+				  nc1 = y1;
+				  nf2 = x2;
+				  nc2 = y2;
+				  nf3 = x3;
+				  nc3 = y3;
+				  nf4 = x4;
+				  nc4 = y4;
+				  inifigura();
+			}else{
+					if(mt[nf1-1][nc1-1]==0 && mt[nf2-1][nc2-1]==0 && mt[nf3-1][nc3-1]==0 && mt[nf4-1][nc4-1]==0){	
+						$(".tetrisnext tr:nth-of-type("+nf1+") td:nth-of-type("+nc1+")").removeClass("mark");
+						$(".tetrisnext tr:nth-of-type("+nf2+") td:nth-of-type("+nc2+")").removeClass("mark");
+						$(".tetrisnext tr:nth-of-type("+nf3+") td:nth-of-type("+nc3+")").removeClass("mark");
+						$(".tetrisnext tr:nth-of-type("+nf4+") td:nth-of-type("+nc4+")").removeClass("mark");
+						
+						a1 = nf1;
+						b1 = nc1;
+						a2 = nf2;
+						b2 = nc2;
+						a3 = nf3;
+						b3 = nc3;
+						a4 = nf4;
+						b4 = nc4;
 
-		a1 = x1;
-		b1 = y1;
-		a2 = x2;
-		b2 = y2;
-		a3 = x3;
-		b3 = y3;
-		a4 = x4;
-		b4 = y4;
+						nf1 = x1;
+				        nc1 = y1;
+						nf2 = x2;
+						nc2 = y2;
+						nf3 = x3;
+						nc3 = y3;
+						nf4 = x4;
+						nc4 = y4;
+
+						$(".tetris tr:nth-of-type("+a1+") td:nth-of-type("+b1+")").addClass("mark");
+						$(".tetris tr:nth-of-type("+a2+") td:nth-of-type("+b2+")").addClass("mark");
+						$(".tetris tr:nth-of-type("+a3+") td:nth-of-type("+b3+")").addClass("mark");
+						$(".tetris tr:nth-of-type("+a4+") td:nth-of-type("+b4+")").addClass("mark");
+
+						$(".tetrisnext tr:nth-of-type("+nf1+") td:nth-of-type("+nc1+")").addClass("mark");
+						$(".tetrisnext tr:nth-of-type("+nf2+") td:nth-of-type("+nc2+")").addClass("mark");
+						$(".tetrisnext tr:nth-of-type("+nf3+") td:nth-of-type("+nc3+")").addClass("mark");
+						$(".tetrisnext tr:nth-of-type("+nf4+") td:nth-of-type("+nc4+")").addClass("mark");
+
+						mt[a1-1][b1-1]=1;
+						mt[a2-1][b2-1]=1;
+						mt[a3-1][b3-1]=1;
+						mt[a4-1][b4-1]=1;
+				}
+			}
 
 
 
-
-
-		mt[a1-1][b1-1]=1;
-		mt[a2-1][b2-1]=1;
-		mt[a3-1][b3-1]=1;
-		mt[a4-1][b4-1]=1;
 	}else{
 		start=0;
 		alert("Game Over");
