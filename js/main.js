@@ -16,6 +16,8 @@ var a3;
 var b3;
 var a4;
 var b4;
+
+ 
 var tiempo = 2000;
 var start = 7;
 var pos = 0;
@@ -593,6 +595,9 @@ function writesquares(x1,y1,x2,y2,x3,y3,x4,y4){
 		$(".tetris tr:nth-of-type("+x2+") td:nth-of-type("+y2+")").addClass("mark");
 		$(".tetris tr:nth-of-type("+x3+") td:nth-of-type("+y3+")").addClass("mark");
 		$(".tetris tr:nth-of-type("+x4+") td:nth-of-type("+y4+")").addClass("mark");
+		
+
+
 		a1 = x1;
 		b1 = y1;
 		a2 = x2;
@@ -601,6 +606,10 @@ function writesquares(x1,y1,x2,y2,x3,y3,x4,y4){
 		b3 = y3;
 		a4 = x4;
 		b4 = y4;
+
+
+
+
 
 		mt[a1-1][b1-1]=1;
 		mt[a2-1][b2-1]=1;
@@ -683,7 +692,7 @@ function move(){
 
 //$("#player1").html(""+a1+"/"+b1+"/"+a2+"/"+b2+"/"+a3+"/"+b3+"/"+a4+"/"+b4);
    }//if start end
-verificafilasllenas();  
+//verificafilasllenas();  
    scores();
 
 }
