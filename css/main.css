@@ -95,16 +95,18 @@ textarea {
 
 
 .tetris{
-    display: block;
+     
     border: 0px; 
     margin: 0px;
     padding: 0px; 
      clear: right;
      margin: 0px auto;
+     vertical-align: top;
 }
 table.tetris{
     display: table;
     height: auto;
+    vertical-align: top;
     width: auto;
 
 border: 1px solid #666;
@@ -128,24 +130,34 @@ table.tetris tr{
 
 
 
+.cuadrotetris{
+    display: inline-block;
+    clear: left;
+    vertical-align: top;
+}
 
-
-
-.tetrisnext{
+.siguientescore{display: inline-block;
+clear: right;
+vertical-align: top;
+text-align: center;
+}
+.tetrisnext{    
+    vertical-align: top;
     display: block;
     border: 0px; 
     margin: 0px;
     padding: 0px; 
      clear: right;
-     margin: 0px auto;
+     margin: 10px auto;
 }
 table.tetrisnext{
     display: table;
     height: auto;
     width: auto;
+    vertical-align: top;
 
-border: 1px solid #666;
-    margin: 0px;
+ 
+    margin: 15px 0px;
     padding: 0px;
 }
 table.tetrisnext td{
@@ -236,7 +248,14 @@ float: right;
 }
 
 
-
+#sectetris{
+    display: table;
+    vertical-align: top;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
 
 
 
