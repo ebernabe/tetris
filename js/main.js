@@ -44,7 +44,7 @@ for(i=0;i<=23;i++)
 function scores(){
     $("#filas").html("Filas:"+filas);
     $("#fichas").html("Figuras:"+fichas);
-    $("#velocidad").html("Velocidad:"+velocidad);
+    $("#velocidad").html("Nivel:"+velocidad);
 
 }
 
@@ -565,8 +565,15 @@ function verificafilasllenas(){
 	    	bandera = bandera + mt[i][j];
 	    }
 	    if(bandera==12){
+	    	$("#scoresanuncio").html("");
 	    		acomodarfilas(i);
 	    		filas=filas+1;
+
+	    		$("#scoresanuncio").html(filas);
+	    		$("#scoresanuncio").removeClass("as");
+	    		$("#scoresanuncio").addClass("as");
+t=setTimeout(function(){$("#scoresanuncio").removeClass("as");},1000);
+
 	    }
 	    bandera=0;
 	}
@@ -597,6 +604,10 @@ function inifigura(){
 			 fichas=fichas+1;
 			  if((fichas%30)==0){
 			    	velocidad = velocidad +1;
+			    		$("#scoresanuncio").html("Nivel "+velocidad);
+	    		$("#scoresanuncio").removeClass("as");
+	    		$("#scoresanuncio").addClass("as");
+t=setTimeout(function(){$("#scoresanuncio").removeClass("as");},1000);
 			    }
 }
 
