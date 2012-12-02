@@ -513,8 +513,9 @@ function cleartable(){
 		    	filax = i+1;
 		    	columnax = j+1; 
 		   	 mt[i][j]=0;
+		   	   
 		        $(".tetris tr:nth-of-type("+filax+") td:nth-of-type("+columnax+")").removeClass("mark");
-		 
+		        
 		    }
 		}
 		scores();
@@ -529,7 +530,11 @@ function imprimircuadros(){
 		    	fila = i+1;
 		    	columna = j+1; 
 		    	 if(mt[i][j]==1){ 	
+
+		    	 	
+
 		    	 		$(".tetris tr:nth-of-type("+fila+") td:nth-of-type("+columna+")").addClass("mark");
+
 		    	 }else{
 		    	 		$(".tetris tr:nth-of-type("+fila+") td:nth-of-type("+columna+")").removeClass("mark");
 		    	 }
