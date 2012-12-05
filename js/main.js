@@ -5,7 +5,7 @@ Kevin Bernabe
 */
 var mt=new Array(24);//matrix tetris
 var filas = 0;
-var fichas = 0;
+var fichas = -1;
 var velocidad = 1;
 var shape;
 var shapex;
@@ -505,7 +505,7 @@ function cleartable(){
 	filax=0;
 	columnax=0;
 	filas=0;
-	fichas=0;
+	fichas=-1;
 	velocidad=0;
 	for(i=0;i<=23;i++)
 		{
@@ -563,6 +563,7 @@ aux = mt;
 }
 
 function verificafilasllenas(){
+	var x = 0;
 	var bandera=0;
 	for(i=0;i<=23;i++)
 	{
@@ -570,19 +571,34 @@ function verificafilasllenas(){
 	    	bandera = bandera + mt[i][j];
 	    }
 	    if(bandera==12){
-	    	$("#scoresanuncio").html("");
+	    	x=x+1;
+	    	 
 	    		acomodarfilas(i);
 	    		filas=filas+1;
+					 scores();
+		    		$("#scoresanuncio").html(filas);
+		    		$("#scoresanuncio").removeClass("as");
+		    		$("#scoresanuncio").addClass("as");
+	                t=setTimeout(function(){$("#scoresanuncio").removeClass("as");},1000);
+	                if(((filas%10)==0)){
+	                	velocidad = velocidad +1;scores();
+						   		y=setTimeout(function(){
+						   				$("#scoresanuncio").html("Nivel "+velocidad);				   		
+						  				$("#scoresanuncio").addClass("as");
+             							t=setTimeout(function(){$("#scoresanuncio").removeClass("as"); },1000);
+						   		},1500);
+						   		
+						   		
+						} 
 
-	    		$("#scoresanuncio").html(filas);
-	    		$("#scoresanuncio").removeClass("as");
-	    		$("#scoresanuncio").addClass("as");
-t=setTimeout(function(){$("#scoresanuncio").removeClass("as");},1000);
+	                 
+				 
 
 	    }
 	    bandera=0;
 	}
 	imprimircuadros();
+	return x;
 }
 
 
@@ -590,7 +606,8 @@ t=setTimeout(function(){$("#scoresanuncio").removeClass("as");},1000);
 function inifigura(){
 	shapex = shape;
 	shape = Math.floor((Math.random()*4)+1);
-    verificafilasllenas();
+	var returx =0;
+    returx = verificafilasllenas();
 			 
 			 switch(shape){
 			 	case 1:
@@ -606,14 +623,10 @@ function inifigura(){
 			 		te();
 			 	break;
 			 }
+			 
 			 fichas=fichas+1;
-			  if((fichas%30)==0){
-			    	velocidad = velocidad +1;
-			    		$("#scoresanuncio").html("Nivel "+velocidad);
-	    		$("#scoresanuncio").removeClass("as");
-	    		$("#scoresanuncio").addClass("as");
-t=setTimeout(function(){$("#scoresanuncio").removeClass("as");},1000);
-			    }
+			 scores();
+			  
 }
 
 
