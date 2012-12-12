@@ -3,13 +3,13 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Ernesto Bernabe -- Back-end Developer -- @ebernabe
+    Kevin Bernabe -- Front-end Developer -- @kevfbs
 
-# THANKS
-
-    <name>
+ 
 
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3
     jQuery, Modernizr
+    node.js/socket.io, express
