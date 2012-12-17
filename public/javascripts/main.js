@@ -864,6 +864,7 @@ $(document).keydown(function(tecla){
 
 
 $(document).ready(function(){
+	$("#stop").toggle();
 	$("#start").click(function(){
 		if(start==7){
 		  inifigura();
@@ -872,17 +873,23 @@ $(document).ready(function(){
 		if(!start){
 		   start=1;
 			//setTimeout("", tiempo);
-			move();  
+			move(); 
+			$("#start").toggle(); 
+			$("#stop").toggle();
 		}
 	});
 
     $("#stop").click(function(){
     	start=0;
+    	$("#start").toggle();
+    	$("#stop").toggle();
     });
 
-    $("#button").click(
-    			
-    	);
-
+    $("#button").click(function(){
+    	 
+    });
+       $("h1").fitText(1.1, { minFontSize: 50, maxFontSize: '95px' });
+       $("#deg90").fitText(1.2);
+       
 			
 });

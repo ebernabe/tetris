@@ -28,6 +28,7 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
+app.get('/tetris', routes.tetris);
 app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){

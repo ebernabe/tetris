@@ -706,6 +706,7 @@ table.tetrisnext tr{
 
 td.mark{
     
+    
    /* background-color: #454545;*/
 
  background: rgb(59,103,158); /* Old browsers */
@@ -975,14 +976,23 @@ color: #a40202;
   -o-animation-iteration-count: infinite;
   -ms-animation-iteration-count: infinite;
 }
+#deg90{
+    margin-top:130px; 
+    display: inline-block;
+float: left;
+    -webkit-transform:rotate(-90deg);
+-moz-transform:rotate(-90deg);
+-o-transform: rotate(-90deg);
+filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3); 
+}
 
 h1{
     font-size: 6em;
     text-shadow:2px 2px 2px rgba(0, 0, 0, 0.2);
  font-family: 'new_deal_deco_nfregular';
-    font-weight: lighter;
-
+    font-weight: lighter; 
 }
+
 
 h2{
     font-size: 1em; font-family: 'new_deal_deco_nfregular';
@@ -991,15 +1001,18 @@ h2{
 #contenido{
     display: block;
     margin: 10px auto;
-    width: 800px;
+    width: 100%;
     text-align: center;
 }
-#button{
-    cursor: pointer;
+a#button:link{
+    text-decoration: none;
+    
     border:1px solid #4096ee;
     display: block;
     box-shadow:2px 2px 2px rgba(0, 0, 0, 0.5);
-    width: 300px;
+    width: 30%;
+
+    max-width: 300px;
     margin: 10px auto;
     padding: 20px;
     border-radius: 18px;
@@ -1019,7 +1032,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', end
 }
 
 
-#button:hover{
+a#button:hover{
 background: rgb(81,168,255); /* Old browsers */
 /* IE9 SVG, needs conditional override of 'filter' to 'none' */
 background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzUxYThmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQ0JSIgc3RvcC1jb2xvcj0iIzMzOTVmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxZTg1ZWQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
@@ -1031,8 +1044,9 @@ background: -ms-linear-gradient(top,  rgba(81,168,255,1) 0%,rgba(51,149,247,1) 4
 background: linear-gradient(to bottom,  rgba(81,168,255,1) 0%,rgba(51,149,247,1) 44%,rgba(30,133,237,1) 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#51a8ff', endColorstr='#1e85ed',GradientType=0 ); /* IE6-8 */
 
-}
-#button:active{
+}a#button:visited{ color: #fff;
+text-decoration:none;}
+a#button:active{
  box-shadow:2px 2px 2px rgba(0, 0, 0, 0);
 font-size: 1.4em;
 }
