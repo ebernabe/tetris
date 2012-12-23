@@ -1051,6 +1051,47 @@ a#button:active{
 font-size: 1.4em;
 }
 
+
+
+
+
+
+.tetris_otro{
+     
+    border: 0px; 
+    margin: 0px;
+    padding: 0px; 
+     clear: right;
+     margin: 0px auto;
+     vertical-align: top;
+}
+table.tetris_otro{
+    display: table;
+    height: auto;
+    vertical-align: top;
+    width: auto;
+
+border: 1px solid #666;
+    margin: 0px;
+    padding: 0px;
+}
+table.tetris_otro td{
+    display:table-cell;
+border: 0px; 
+    margin: 0px;
+    padding: 0px; 
+    width: 5px;
+    height: 5px;
+    
+}
+table.tetris_otro tr{
+      
+    margin: 0px;
+    padding:0px; 
+}
+
+
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */

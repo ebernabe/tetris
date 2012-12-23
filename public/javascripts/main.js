@@ -3,6 +3,7 @@ Authors
 Ernesto Bernabe 
 Kevin Bernabe
 */
+var socket = io.connect('http://localhost:3000/');
 var mt=new Array(24);//matrix tetris
 var filas = 0;
 var fichas = -1;
@@ -102,6 +103,7 @@ function figurapos(){
 					mt[a2-1][b2-1]=1;
 					mt[a3-1][b3-1]=1;
 					mt[a4-1][b4-1]=1;
+					emitmatrix();
 					
 					}
       			 }else{
@@ -144,7 +146,8 @@ function figurapos(){
 				    mt[a1-1][b1-1]=1;
 					mt[a2-1][b2-1]=1;
 					mt[a3-1][b3-1]=1;
-					mt[a4-1][b4-1]=1;	
+					mt[a4-1][b4-1]=1;
+					emitmatrix();	
                     
 
        			}
@@ -187,7 +190,8 @@ function figurapos(){
 				 mt[a1-1][b1-1]=1;
 					mt[a2-1][b2-1]=1;
 					mt[a3-1][b3-1]=1;
-					mt[a4-1][b4-1]=1;	
+					mt[a4-1][b4-1]=1;
+					emitmatrix();	
                           
 
 			}else if(a4==(a2-2)){
@@ -228,6 +232,7 @@ function figurapos(){
 					mt[a2-1][b2-1]=1;
 					mt[a3-1][b3-1]=1;
 					mt[a4-1][b4-1]=1;	
+					emitmatrix();
 			}else if(a3==(a1-1)){
 				pos=3;
        				 mt[a1-1][b1-1]=0;
@@ -266,6 +271,7 @@ function figurapos(){
 					mt[a2-1][b2-1]=1;
 					mt[a3-1][b3-1]=1;
 					mt[a4-1][b4-1]=1;	
+					emitmatrix();
 
 
 
@@ -308,7 +314,8 @@ pos=0;
 					 mt[a1-1][b1-1]=1;
 					mt[a2-1][b2-1]=1;
 					mt[a3-1][b3-1]=1;
-					mt[a4-1][b4-1]=1;	
+					mt[a4-1][b4-1]=1;
+					emitmatrix();	
 
 
 
@@ -355,6 +362,7 @@ pos=1;
 					mt[a2-1][b2-1]=1;
 					mt[a3-1][b3-1]=1;
 					mt[a4-1][b4-1]=1;	
+					emitmatrix();
 
 
 
@@ -397,7 +405,8 @@ pos=2;
 					 mt[a1-1][b1-1]=1;
 					mt[a2-1][b2-1]=1;
 					mt[a3-1][b3-1]=1;
-					mt[a4-1][b4-1]=1;	
+					mt[a4-1][b4-1]=1;
+					emitmatrix();	
 
 
 
@@ -440,7 +449,8 @@ pos=3;
 					 mt[a1-1][b1-1]=1;
 					mt[a2-1][b2-1]=1;
 					mt[a3-1][b3-1]=1;
-					mt[a4-1][b4-1]=1;	
+					mt[a4-1][b4-1]=1;
+					emitmatrix();	
 
 
 
@@ -483,8 +493,8 @@ pos=0;
 					 mt[a1-1][b1-1]=1;
 					mt[a2-1][b2-1]=1;
 					mt[a3-1][b3-1]=1;
-					mt[a4-1][b4-1]=1;	
-
+					mt[a4-1][b4-1]=1;
+					emitmatrix();
 
 
 
@@ -543,6 +553,24 @@ function imprimircuadros(){
 
 }
 
+
+function imprimircuadros_otros(xt){
+	for(i=0;i<=23;i++)
+		{
+		    for (j=0;j<=11;j++){
+		    	fila = i+1;
+		    	columna = j+1; 
+		    	 if(xt[i][j]==1){ 	
+		    	 		$(".tetris_otro tr:nth-of-type("+fila+") td:nth-of-type("+columna+")").addClass("mark");
+		    	 }else{
+		    	 		$(".tetris_otro tr:nth-of-type("+fila+") td:nth-of-type("+columna+")").removeClass("mark");
+		    	 }
+		    }
+		}
+
+}
+
+
 function acomodarfilas(i){
 var n;
 aux = mt;
@@ -598,6 +626,7 @@ function verificafilasllenas(){
 	    bandera=0;
 	}
 	imprimircuadros();
+	emitmatrix();
 	return x;
 }
 
@@ -687,6 +716,7 @@ function writesquares(x1,y1,x2,y2,x3,y3,x4,y4){
 						mt[a2-1][b2-1]=1;
 						mt[a3-1][b3-1]=1;
 						mt[a4-1][b4-1]=1;
+						emitmatrix();
 				}
 			}
 
@@ -753,7 +783,8 @@ function move(){
 			mt[a1-1][b1-1]=1;
 			mt[a2-1][b2-1]=1;
 			mt[a3-1][b3-1]=1;
-			mt[a4-1][b4-1]=1;	
+			mt[a4-1][b4-1]=1;
+			emitmatrix();	
 			//		if(a1==24 || a2==24 || a3==24 || a4==24){
 			//		         verificafilasllenas();  
 			//				}
@@ -803,7 +834,8 @@ $(document).keydown(function(tecla){
 					 mt[a1-1][b1-1]=1;
 					 mt[a2-1][b2-1]=1;
 				  	 mt[a3-1][b3-1]=1;
-					 mt[a4-1][b4-1]=1;	
+					 mt[a4-1][b4-1]=1;
+					 emitmatrix();
 
 
                  }
@@ -825,7 +857,8 @@ $(document).keydown(function(tecla){
 					mt[a1-1][b1-1]=1;
 					mt[a2-1][b2-1]=1;
 				  	mt[a3-1][b3-1]=1;
-					mt[a4-1][b4-1]=1;	
+					mt[a4-1][b4-1]=1;
+					emitmatrix();	
                  }
             } else if(tecla.keyCode == 40){
             	 if  (((a1+1)<=24) && ((a2+1)<=24) && ((a3+1)<=24) && ((a4+1)<=24)){
@@ -852,7 +885,8 @@ $(document).keydown(function(tecla){
 						mt[a1-1][b1-1]=1;
 					    mt[a2-1][b2-1]=1;
 				  	    mt[a3-1][b3-1]=1;
-					    mt[a4-1][b4-1]=1;	
+					    mt[a4-1][b4-1]=1;
+					    emitmatrix();	
 				}
 			
             }  
@@ -861,7 +895,9 @@ $(document).keydown(function(tecla){
 			//				}
     }//if start end                
  });
-
+function emitmatrix(){
+    socket.emit('tetrisr',mt);
+}
 
 $(document).ready(function(){
 	$("#stop").toggle();
@@ -890,6 +926,13 @@ $(document).ready(function(){
     });
        $("h1").fitText(1.1, { minFontSize: 50, maxFontSize: '95px' });
        $("#deg90").fitText(1.2);
-       
+
+    socket.on('connected', function () {
+			console.log('Conectado!');
+			socket.on('omt', function (data) {
+				imprimircuadros_otros(data);
+			   //alert(data);
+			});
+		});       
 			
 });
