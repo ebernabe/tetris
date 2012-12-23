@@ -1067,6 +1067,7 @@ font-size: 1.4em;
 }
 table.tetris_otro{
     display: table;
+    float: right;
     height: auto;
     vertical-align: top;
     width: auto;

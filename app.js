@@ -50,10 +50,10 @@ server = http.createServer(app).listen(app.get('port'), function(){
 var io = require('socket.io').listen(server);
 io.sockets.on('connection', function(socket){
   socket.emit('connected'); 
-  socket.on('tetrisr', function(data){
+  socket.on('tetrisr', function(data,fic,fil,vel){
       console.log(data);
       //socket.emit('omt'); 
-      socket.broadcast.emit("omt",data);
+      socket.broadcast.emit("omt",data,fic,fil,vel);
       //Evento creado por nosotros se puede llamar 'pepito'
    });
   //Evento creado por nosotros se puede llamar 'pepito'

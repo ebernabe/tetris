@@ -3,7 +3,7 @@ Authors
 Ernesto Bernabe 
 Kevin Bernabe
 */
-var socket = io.connect('http://localhost:3000/');
+var socket = io.connect('http://192.168.0.100:3000/');
 var mt=new Array(24);//matrix tetris
 var filas = 0;
 var fichas = -1;
@@ -46,6 +46,12 @@ function scores(){
     $("#filas").html("Filas:"+filas);
     $("#fichas").html("Figuras:"+fichas);
     $("#velocidad").html("Nivel:"+velocidad);
+
+}
+function scores_otros(fic,fil,vel){
+    $("#filas_otros").html("Filas:"+fil);
+    $("#fichas_otros").html("Figuras:"+fic);
+    $("#velocidad_otros").html("Nivel:"+vel);
 
 }
 
@@ -896,7 +902,7 @@ $(document).keydown(function(tecla){
     }//if start end                
  });
 function emitmatrix(){
-    socket.emit('tetrisr',mt);
+    socket.emit('tetrisr',mt,fichas,filas,velocidad);
 }
 
 $(document).ready(function(){
@@ -929,8 +935,9 @@ $(document).ready(function(){
 
     socket.on('connected', function () {
 			console.log('Conectado!');
-			socket.on('omt', function (data) {
+			socket.on('omt', function (data,fic,fil,vel) {
 				imprimircuadros_otros(data);
+				scores_otros(fic,fil,vel);
 			   //alert(data);
 			});
 		});       
