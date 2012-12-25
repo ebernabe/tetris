@@ -547,8 +547,6 @@ function imprimircuadros(){
 		    	columna = j+1; 
 		    	 if(mt[i][j]==1){ 	
 
-		    	 	
-
 		    	 		$(".tetris tr:nth-of-type("+fila+") td:nth-of-type("+columna+")").addClass("mark");
 
 		    	 }else{
@@ -608,12 +606,23 @@ function verificafilasllenas(){
 	    	x=x+1;
 	    	 
 	    		acomodarfilas(i);
+
+	    		var d = i+1;
+	    			
+	    		 $(".tetris tr:nth-of-type("+d+")").addClass("am");
+	    		 qq=setTimeout(function(){$(".am").removeClass("am");},300);
+	    			
+						   				 
+             							
+						   		 
 	    		filas=filas+1;
 					 scores();
 		    		$("#scoresanuncio").html(filas);
 		    		$("#scoresanuncio").removeClass("as");
 		    		$("#scoresanuncio").addClass("as");
+	                
 	                t=setTimeout(function(){$("#scoresanuncio").removeClass("as");},1000);
+
 	                if(((filas%10)==0)){
 	                	velocidad = velocidad +1;scores();
 						   		y=setTimeout(function(){
@@ -621,8 +630,6 @@ function verificafilasllenas(){
 						  				$("#scoresanuncio").addClass("as");
              							t=setTimeout(function(){$("#scoresanuncio").removeClass("as"); },1000);
 						   		},1500);
-						   		
-						   		
 						} 
 
 	                 
@@ -631,7 +638,8 @@ function verificafilasllenas(){
 	    }
 	    bandera=0;
 	}
-	imprimircuadros();
+	//imprimircuadros();
+	t=setTimeout(function(){ imprimircuadros();},310);
 	emitmatrix();
 	return x;
 }

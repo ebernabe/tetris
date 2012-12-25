@@ -933,44 +933,44 @@ color: #a40202;
 
 @keyframes mfigura
 {
-0%   {-webkit-transform:rotateY(7deg);}
-25%  {-webkit-transform:rotateY(25deg);}
-50%  {-webkit-transform:rotateY(100deg);}
-100% {-webkit-transform:rotateY(180deg);}
+0%   {-webkit-transform:rotateX(7deg);}
+25%  {-webkit-transform:rotateX(25deg);}
+50%  {-webkit-transform:rotateX(100deg);}
+100% {-webkit-transform:rotateX(180deg);}
 }
 
 @-moz-keyframes mfigura /* Firefox */
 {
-0%   {-webkit-transform:rotateY(7deg);}
-25%  {-webkit-transform:rotateY(25deg);}
-50%  {-webkit-transform:rotateY(100deg);}
-100% {-webkit-transform:rotateY(180deg);}
+0%   {-webkit-transform:rotateX(7deg);}
+25%  {-webkit-transform:rotateX(25deg);}
+50%  {-webkit-transform:rotateX(100deg);}
+100% {-webkit-transform:rotateX(180deg);}
 }
 
 @-webkit-keyframes mfigura /* Safari and Chrome */
 {
-0%   {-webkit-transform:rotateY(7deg);}
-25%  {-webkit-transform:rotateY(25deg);}
-50%  {-webkit-transform:rotateY(100deg);}
-100% {-webkit-transform:rotateY(180deg);}
+0%   {-webkit-transform:rotateX(7deg);}
+25%  {-webkit-transform:rotateX(25deg);}
+50%  {-webkit-transform:rotateX(100deg);}
+100% {-webkit-transform:rotateX(180deg);}
 }
 
 @-o-keyframes mfigura /* Opera */
 {
-0%   {-webkit-transform:rotateY(7deg);}
-25%  {-webkit-transform:rotateY(25deg);}
-50%  {-webkit-transform:rotateY(100deg);}
-100% {-webkit-transform:rotateY(180deg);}
+0%   {-webkit-transform:rotateX(7deg);}
+25%  {-webkit-transform:rotateX(25deg);}
+50%  {-webkit-transform:rotateX(100deg);}
+100% {-webkit-transform:rotateX(180deg);}
 }
 
 
 
-.am{
-   animation: mfigura 1s;
--moz-animation: mfigura 1s; /* Firefox */
--webkit-animation: mfigura 1s; /* Safari and Chrome */
--o-animation: mfigura 1s; /* Opera */
--ms-animation: mfigura 1s; /* Opera */  
+tr.am{
+   animation: mfigura 0.3s;
+-moz-animation: mfigura 0.3s; /* Firefox */
+-webkit-animation: mfigura 0.3s; /* Safari and Chrome */
+-o-animation: mfigura 0.3s; /* Opera */
+-ms-animation: mfigura 0.3s; /* Opera */  
   -webkit-animation-iteration-count: infinite;
   -moz-animation-iteration-count: infinite;
   -o-animation-iteration-count: infinite;
