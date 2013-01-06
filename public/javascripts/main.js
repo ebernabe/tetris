@@ -3,7 +3,7 @@ Authors
 Ernesto Bernabe 
 Kevin Bernabe
 */
-var socket = io.connect('http://192.168.0.100:3000/');
+var socket = io.connect('/');
 var mt=new Array(24);//matrix tetris
 var filas = 0;
 var fichas = -1;
