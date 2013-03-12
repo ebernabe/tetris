@@ -3,6 +3,7 @@ Authors
 Ernesto Bernabe 
 Kevin Bernabe
 */
+var usuario = "";
 var socket = io.connect('/');
 var mt=new Array(24);//matrix tetris
 var filas = 0;
@@ -821,16 +822,35 @@ function move(){
 
 
 $(document).keydown(function(tecla){
- 
+ //alert(tecla.keyCode);
 	if(start){//if start ini
-
-			 if (tecla.keyCode == 38) {
+             if (tecla.keyCode == 13) {//cambio de posicion
+	             	if(usuario=="" && start==7){
+	             				if ($("#jugador").val() != ''){
+								  inifigura();
+								  start=0;
+								  $("#sectetris").toggle(); 
+								  $("#user").toggle(); 
+								  usuario=$("#jugador").val();
+								}else{
+									alert("Digite el usuario por favor");
+								}
+								if(!start){
+								   start=1;
+									//setTimeout("", tiempo);
+									move(); 
+									$("#start").toggle(); 
+									$("#stop").toggle();
+								}
+	             	}
+             }
+			 if (tecla.keyCode == 87) {//cambio de posicion
 
 			 		figurapos();
 
 			 }
 
-              if (tecla.keyCode == 39) {
+              if (tecla.keyCode == 68) {//derecha
 
                 if  (((b1+1)<=12) && ((b2+1)<=12) && ((b3+1)<=12) && ((b4+1)<=12)){
                 	 mt[a1-1][b1-1]=0;
@@ -854,7 +874,7 @@ $(document).keydown(function(tecla){
 
                  }
 
-            }else if(tecla.keyCode == 37) {
+            }else if(tecla.keyCode == 65) {//izquierda
                if  (((b1-1)>0) && ((b2-1)>0) && ((b3-1)>0) && ((b4-1)>0)){
                		mt[a1-1][b1-1]=0;
 					mt[a2-1][b2-1]=0;
@@ -874,7 +894,7 @@ $(document).keydown(function(tecla){
 					mt[a4-1][b4-1]=1;
 					emitmatrix();	
                  }
-            } else if(tecla.keyCode == 40){
+            } else if(tecla.keyCode == 83){
             	 if  (((a1+1)<=24) && ((a2+1)<=24) && ((a3+1)<=24) && ((a4+1)<=24)){
             	 	 	mt[a1-1][b1-1]=0;
 					 	mt[a2-1][b2-1]=0;
@@ -914,11 +934,19 @@ function emitmatrix(){
 }
 
 $(document).ready(function(){
+	$("#sectetris").toggle(); 
 	$("#stop").toggle();
 	$("#start").click(function(){
 		if(start==7){
-		  inifigura();
-		  start=0;
+		  if ($("#jugador").val() != ''){
+			  inifigura();
+			  start=0;
+			  $("#sectetris").toggle(); 
+			  $("#user").toggle(); 
+			  usuario=$("#jugador").val();
+			}else{
+				alert("Digite el usuario por favor");
+			}
 		}
 		if(!start){
 		   start=1;

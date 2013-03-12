@@ -1044,17 +1044,52 @@ background: -ms-linear-gradient(top,  rgba(81,168,255,1) 0%,rgba(51,149,247,1) 4
 background: linear-gradient(to bottom,  rgba(81,168,255,1) 0%,rgba(51,149,247,1) 44%,rgba(30,133,237,1) 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#51a8ff', endColorstr='#1e85ed',GradientType=0 ); /* IE6-8 */
 
-}a#button:visited{ color: #fff;
+}
+
+a#button:visited{ color: #fff;
 text-decoration:none;}
 a#button:active{
  box-shadow:2px 2px 2px rgba(0, 0, 0, 0);
 font-size: 1.4em;
 }
+#user {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 40px;
+}
+#user input{
+ text-align: center;
+ padding: 10px;
+ border-radius: 10px;
+ border: 1px solid #ccc;
+}
+#user a:link{
+    display: block; margin: 20px auto;
+    text-align: center;
+    width: 100%;
+    font-size: 50px;
 
+}
+#filas{
+    font-size: 24px;
+}
+#fichas{
+    color: #ccc;
+    margin-top: 1px;
+    }
+#velocidad{ color: #ccc;
+margin-top: 1px;}
 
-
-
-
+#tabla_otrojugador{
+    display: block;
+    margin-top: 5px;
+    padding-top:10px;
+    border-top: 1px dotted #ccc; 
+}
+#tabla_otrojugador span{
+    font-size: 20px;
+}
 
 .tetris_otro{
      
@@ -1062,18 +1097,17 @@ font-size: 1.4em;
     margin: 0px;
     padding: 0px; 
      clear: right;
+     display: block;
      margin: 0px auto;
      vertical-align: top;
 }
 table.tetris_otro{
     display: table;
-    float: right;
     height: auto;
     vertical-align: top;
     width: auto;
-
 border: 1px solid #666;
-    margin: 0px;
+    margin: 10px auto;
     padding: 0px;
 }
 table.tetris_otro td{
