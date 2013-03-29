@@ -70,10 +70,11 @@ function scores(){
     $("#velocidad").html("Nivel:"+velocidad);
 
 }
-function scores_otros(fic,fil,vel){
+function scores_otros(fic,fil,vel,user){
     $("#filas_otros").html("Filas:"+fil);
     $("#fichas_otros").html("Figuras:"+fic);
     $("#velocidad_otros").html("Nivel:"+vel);
+    $("#opo").html("Oponente: "+user);
 
 }
 
@@ -936,7 +937,8 @@ $(document).keydown(function(tecla){
     }//if start end                
  });
 function emitmatrix(){
-    socket.emit('tetrisr',mt,fichas,filas,velocidad);
+	user=$("#player").html();
+    socket.emit('tetrisr',mt,fichas,filas,velocidad,user);
 }
 
 $(document).ready(function(){
@@ -970,9 +972,9 @@ $(document).ready(function(){
 
     socket.on('connected', function () {
 			console.log('Conectado!');
-			socket.on('omt', function (data,fic,fil,vel) {
+			socket.on('omt', function (data,fic,fil,vel,user) {
 				imprimircuadros_otros(data);
-				scores_otros(fic,fil,vel);
+				scores_otros(fic,fil,vel,user);
 			   //alert(data);
 			});
 		});       
