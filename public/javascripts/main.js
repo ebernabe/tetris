@@ -42,6 +42,27 @@ for(i=0;i<=23;i++)
     	mt[i][j]=0;
     }
 }
+function startverification(){
+								if ($("#jugador").val() != ''){
+								  inifigura();
+								  start=0;
+								  $("#player").html($("#jugador").val());
+								  $("#sectetris").toggle(); 
+								  $("#user").toggle(); 
+								  usuario=$("#jugador").val();
+								}else{
+									alert("Digite el usuario por favor");
+								}
+								if(!start){
+								   start=1;
+									//setTimeout("", tiempo);
+									move(); 
+									$("#start").toggle(); 
+									$("#stop").toggle();
+								}
+
+
+}
 
 function scores(){
     $("#filas").html("Filas:"+filas);
@@ -826,22 +847,7 @@ $(document).keydown(function(tecla){
 	if(start){//if start ini
              if (tecla.keyCode == 13) {//cambio de posicion
 	             	if(usuario=="" && start==7){
-	             				if ($("#jugador").val() != ''){
-								  inifigura();
-								  start=0;
-								  $("#sectetris").toggle(); 
-								  $("#user").toggle(); 
-								  usuario=$("#jugador").val();
-								}else{
-									alert("Digite el usuario por favor");
-								}
-								if(!start){
-								   start=1;
-									//setTimeout("", tiempo);
-									move(); 
-									$("#start").toggle(); 
-									$("#stop").toggle();
-								}
+	             		startverification();
 	             	}
              }
 			 if (tecla.keyCode == 87) {//cambio de posicion
@@ -938,15 +944,7 @@ $(document).ready(function(){
 	$("#stop").toggle();
 	$("#start").click(function(){
 		if(start==7){
-		  if ($("#jugador").val() != ''){
-			  inifigura();
-			  start=0;
-			  $("#sectetris").toggle(); 
-			  $("#user").toggle(); 
-			  usuario=$("#jugador").val();
-			}else{
-				alert("Digite el usuario por favor");
-			}
+		  startverification();
 		}
 		if(!start){
 		   start=1;
@@ -968,6 +966,7 @@ $(document).ready(function(){
     });
        $("h1").fitText(1.1, { minFontSize: 50, maxFontSize: '95px' });
        $("#deg90").fitText(1.2);
+       //$("#player").fitText(1.1, { minFontSize: 16, maxFontSize: '26px' });
 
     socket.on('connected', function () {
 			console.log('Conectado!');
