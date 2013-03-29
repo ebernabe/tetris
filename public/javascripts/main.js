@@ -47,7 +47,7 @@ function startverification(){
 								  inifigura();
 								  start=0;
 								  $("#player").html($("#jugador").val());
-								  $("#sectetris").toggle(); 
+								  $("#sectetris").toggle('slow'); 
 								  $("#user").toggle(); 
 								  usuario=$("#jugador").val();
 								}else{
