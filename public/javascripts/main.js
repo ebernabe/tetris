@@ -969,7 +969,7 @@ $(document).ready(function(){
        $("h1").fitText(1.1, { minFontSize: 50, maxFontSize: '95px' });
        $("#deg90").fitText(1.2);
        //$("#player").fitText(1.1, { minFontSize: 16, maxFontSize: '26px' });
-
+     //lo siguiente recibe la emision de los demas nodos jugadores y pone la info en pantall
     socket.on('connected', function () {
 			console.log('Conectado!');
 			socket.on('omt', function (data,fic,fil,vel,user) {

@@ -53,10 +53,11 @@ io.sockets.on('connection', function(socket){
   socket.on('tetrisr', function(data,fic,fil,vel,user){
       console.log(data);
       //socket.emit('omt'); 
+      //envia los datos del tetris a los demas X jugadores sera para 2 o mas en el futuro
       socket.broadcast.emit("omt",data,fic,fil,vel,user);
       //Evento creado por nosotros se puede llamar 'pepito'
    });
-  //Evento creado por nosotros se puede llamar 'pepito'
+   
 });
 
 
