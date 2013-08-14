@@ -966,6 +966,7 @@ $(document).ready(function(){
     $("#button").click(function(){
     	 
     });
+    $("#jugador").focus();
        $("h1").fitText(1.1, { minFontSize: 50, maxFontSize: '95px' });
        $("#deg90").fitText(1.2);
        //$("#player").fitText(1.1, { minFontSize: 16, maxFontSize: '26px' });
