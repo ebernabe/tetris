@@ -4,7 +4,7 @@ We are using HTML5 Boilerplate, Jquery, Css3.
 
 To install you need node.js and just use 
 
-#node app.js
+node app.js
 
 then in the browser type
 
