@@ -52,6 +52,17 @@ summary {
     /*box-shadow: 2px 2px 2px rgba(0,0,0,0.3);*/
     background-color: #fff585;
 }
+#linkgit{display: block;
+margin: 100px auto;
+width: 100%;
+text-align: center;
+}
+#linkgit2{display: block;
+margin: 100px auto;
+width: 100%;
+text-align: center;
+padding-left: 40px;
+}
 /*
  * Corrects `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
  */
