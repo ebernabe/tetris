@@ -1,4 +1,5 @@
-# Tetris.io Multiplayer [ / Node.js / Express / Jade] 
+# Tetris.io Multiplayer 
+# [ Node.js / Socket.io / Express / Jade] 
 
 We are using HTML5 Boilerplate, Jquery, Css3. 
 
